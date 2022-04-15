@@ -11,6 +11,10 @@ class Bird {
       console.info(`A ${this.commonName} has been caught"`);
     }
 
+    static find(name){
+        return this.flock.find( bird => bird.commonName == name );
+    }
+
     static catchBirds = async () => {
         const response = await fetch("../js/birds.json");
         const json = await response.json();
