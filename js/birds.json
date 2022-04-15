@@ -1,0 +1,20 @@
+[
+    {
+        "commonName": "Bird to the max",
+        "latinName": "Birdicus Maximus",
+        "image": "./path/to/image/file.jpg",
+        "song": "./path/to/song/file.mp3",
+        "firstSighting": "01/01/1970"
+    },
+    {
+        "commonName": "Bird to the minimum",
+        "latinName": "Birdicus Minimus",
+        "image": "./path/to/image/file.jpg",
+        "song": "./path/to/song/file.mp3",
+        "firstSighting": "01/01/1970"
+    }
+]
+
+
+
+
