@@ -8,7 +8,7 @@ class Bird {
       this.song = song;
       this.firstSighting = new Date(firstSighting);
 
-      console.log(this.commonName + " has been caught.");
+      console.info(`A ${this.commonName} has been caught"`);
     }
 
     static catchBirds = async () => {
@@ -17,9 +17,10 @@ class Bird {
         const flock = [];
     
         json.forEach(bird => {
-            flock[bird.commonName] = new Bird(bird.commonName, bird.latinName, bird.image, bird.song, bird.firstSighting);
+            flock.push(new Bird(bird.commonName, bird.latinName, bird.image, bird.song, bird.firstSighting));
         });
     
-        return flock;
+        this.flock = flock;
+        console.info(`---- We caught ${flock.length} birds ----`);
     }
   }
