@@ -11,8 +11,12 @@ class Bird {
       console.info(`A ${this.commonName} has been caught"`);
     }
 
+    sing() {
+        return `Tweet tweet: ${this.song}`
+    }
+
     static find(name){
-        return this.flock.find( bird => bird.commonName == name );
+        return this.flock.find(bird => bird.commonName == name);
     }
 
     static catchBirds = async () => {
