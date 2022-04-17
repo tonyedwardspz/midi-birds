@@ -44,7 +44,8 @@ class MIDI {
 
         } else if (message.data[0] === 129 && message.data[1] === 48) {
             console.log('stopping singing');
-            app.songs[message.data[1]].pause(); // Can't stop the rock
+             // Can't stop the rook, but you can pause it to allow the browser to garbage collect
+            app.songs[message.data[1]].pause();
         }
     }
 }
