@@ -16,7 +16,7 @@ class Bird {
     }
 
     static find(name){
-        return this.flock.find(bird => bird.commonName == name);
+        return this.flock.find(bird => bird.commonName.toLowerCase() == name.toLowerCase());
     }
 
     static catchBirds = async () => {
