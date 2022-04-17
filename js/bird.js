@@ -8,7 +8,7 @@ class Bird {
       this.song = song;
       this.firstSighting = new Date(firstSighting);
 
-      console.info(`A ${this.commonName} has been caught"`);
+      console.info(`A ${this.commonName} has been caught`);
     }
 
     sing() {
