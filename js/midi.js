@@ -2,6 +2,7 @@
 
 class MIDI {
     constructor(){
+
         if (navigator.requestMIDIAccess) {
             console.log('Browser supports MIDI!');
     
@@ -20,7 +21,7 @@ class MIDI {
         for (let input = this.inputs.next();
             input && !input.done;
             input = this.inputs.next()) {
-            // each time there is a midi message call the onMIDIMessage function
+
             input.value.onmidimessage = this.onMIDIMessage;
         }
     }
@@ -35,8 +36,15 @@ class MIDI {
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
         console.log(message.data);
-        if (message.data[1] === 48) {
+        
+        if (message.data[0] === 145 && message.data[1] === 48) {
             console.log(Bird.find('Robin').sing());
+            app.songs[message.data[1]] = new Audio(Bird.find('Robin').sing());
+            app.songs[message.data[1]].play();
+
+        } else if (message.data[0] === 129 && message.data[1] === 48) {
+            console.log('stopping singing');
+            app.songs[message.data[1]].pause(); // Can't stop the rock
         }
     }
 }

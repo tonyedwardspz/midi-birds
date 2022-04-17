@@ -12,7 +12,7 @@ class Bird {
     }
 
     sing() {
-        return `Tweet tweet: ${this.song}`
+        return this.song;
     }
 
     static find(name){

@@ -3,7 +3,7 @@
         "commonName": "Robin",
         "latinName": "Birdicus Maximus",
         "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
+        "song": "./audio/robin.mp3",
         "firstSighting": "01/01/1970"
     },
     {

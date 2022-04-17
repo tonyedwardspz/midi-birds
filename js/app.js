@@ -1,4 +1,6 @@
-let app = {};
+let app = {
+    songs: {}
+};
 
 Bird.catchBirds().then(() => {
     console.log('Flock ready');
