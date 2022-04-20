@@ -2,177 +2,227 @@
     {
         "commonName": "Robin",
         "latinName": "Birdicus Maximus",
-        "image": "./path/to/image/file.jpg",
+        "image": ".images/file.jpg",
+        "imageCredit": "https://www.freeimages.com/photo/robin-1399976",
         "song": "./audio/robin.mp3",
-        "firstSighting": "01/01/1970"
+        "songCredit": "https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/robin/",
+        "sightings": "0"
     },
     {
         "commonName": "Jackdaw",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Blackbird",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Wood Pigeon",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "House Sparrow",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Great Tit",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Herring Gull",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Raven",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Collared Dove",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Wren",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Tawny Owl",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Buzzard",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Firecrest",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Starling",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Rook",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Long Tailed Tit",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Loon",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Chaffinch",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Blue Tit",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Spotted Flycatcher",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Coal Tit",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Ruddy Turnstone",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Dunnock",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Gray Heron",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     },
     {
         "commonName": "Goldfinch",
         "latinName": "Birdicus Minimus",
-        "image": "./path/to/image/file.jpg",
-        "song": "./path/to/song/file.mp3",
-        "firstSighting": "01/01/1970"
+        "image": ".images/file.jpg",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": "0"
     }
 
 ]
