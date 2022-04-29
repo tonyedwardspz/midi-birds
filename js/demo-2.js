@@ -9,5 +9,5 @@ Bird.catchBirds().then(() => {
     
     app.game = new PlayCardsGame();  
 
-    app.midi = new MIDI(app.game.processKeyPress);
+    app.midi = new MIDI();
 });

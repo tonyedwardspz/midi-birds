@@ -14,16 +14,23 @@ class PlayCardsGame{
         if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
             // fetch the bird selected
             // store selected bird in the game state
+            console.log('Keypress received in game controller');
             
-
-            // play thhe bird song
+            if (state === 145 && key === 48) {
+                console.log(Bird.find('Robin').sing());
+                app.songs[key] = new Audio(Bird.find('Robin').sing());
+                app.songs[key].play();
+    
+            }
 
 
             // update the view with the selected bird
 
         } else if ((key >= 48 && key <= 72) && state === 129){ // Keyboard/Off
             // stop bird singing
-
+            // Can't stop the rook, but you can pause it to allow the browser to garbage collect
+            console.log('stopping singing');
+            app.songs[key].pause();
         }
 
         if ((key >= 0 && key <= 39) && state === 144){ // pad/on
