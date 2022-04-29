@@ -6,23 +6,19 @@ class PlayCardsGame{
     }
 
     processKeyPress(state, key, velocity){
+        console.log('Keypress received in game controller', key, state, velocity);
         // [on/off, key, velocity]
         // keys = [145/129, 48-72, 0-127] 
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
 
         if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
-            // fetch the bird selected
+            let currentBird = Bird.findByID(key);
             // store selected bird in the game state
-            console.log('Keypress received in game controller');
             
-            if (state === 145 && key === 48) {
-                console.log(Bird.find('Robin').sing());
-                app.songs[key] = new Audio(Bird.find('Robin').sing());
-                app.songs[key].play();
-    
-            }
-
+            // Play the song
+            app.songs[key] = new Audio(currentBird.sing());
+            app.songs[key].play();
 
             // update the view with the selected bird
 
@@ -34,15 +30,20 @@ class PlayCardsGame{
         }
 
         if ((key >= 0 && key <= 39) && state === 144){ // pad/on
-            // if the top left pad, select lower
-
-            // if the top right pads, select higher
-
-            // if the bottom left, show answer
-
-            // if the bottom right, next round
-                // add bird to the top view row
-                // update the game state
+            
+            if(key === 32){
+                this.higher();
+            } else if (key === 0) {
+                this.lower();
+            } else if (key === 39) {
+                this.showAnswer();
+            } else if (key === 7){
+                this.nextRound();
+            } else if (key === 35 || key === 36){
+                this.beginGame();
+            }
+            // add bird to the top view row
+            // update the game state
 
         } else if ((key >= 0 && key <= 39) && state === 128){ // pad/Off
 
@@ -51,15 +52,25 @@ class PlayCardsGame{
     }
 
     higher(){
-
+        console.log('Higher');
     }
 
     lower(){
-
+        console.log('Lower');
     }
 
     showAnswer(){
+        console.log('Show Answer');
+    }
 
+    nextRound(){
+        console.log('Next Round');
+    }
+
+    beginGame(){
+        console.log('Begin Game');
+        app.midi.keypadLightsOff();
+        this.setupLights();
     }
 
     stopSinging(){
@@ -77,4 +88,13 @@ class PlayCardsGame{
     addBirdToRightPanel(){
         
     }
-  }
+
+    setupLights(){
+        app.midi.switchOnLights([
+            [32, 1], // Higher
+            [0, 5], // Lower
+            [39, 1], // Show Answer
+            [7, 3] // Next Round
+        ]);
+    }
+}

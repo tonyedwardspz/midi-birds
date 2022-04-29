@@ -1,14 +1,15 @@
 "use strict"
 
 class Bird {
-    constructor(commonName, latinName, image, song, firstSighting) {
-      this.commonName = commonName;
-      this.latinName = latinName;
-      this.image = image;
-      this.song = song;
-      this.firstSighting = new Date(firstSighting);
+    constructor(id, commonName, latinName, image, song, firstSighting) {
+        this.id = id;
+        this.commonName = commonName;
+        this.latinName = latinName;
+        this.image = image;
+        this.song = song;
+        this.firstSighting = new Date(firstSighting);
 
-      console.info(`A ${this.commonName} has been caught`);
+      console.info(`${this.id}: A ${this.commonName} has been caught`);
     }
 
     sing() {
@@ -20,7 +21,7 @@ class Bird {
     }
 
     static findByID(id){
-        return this.flock.find(bird => bird.ID == id);
+        return this.flock.find(bird => bird.id == id);
     }
 
     static catchBirds = async () => {
@@ -29,7 +30,7 @@ class Bird {
         const flock = [];
     
         json.forEach(bird => {
-            flock.push(new Bird(bird.commonName, bird.latinName, bird.image, bird.song, bird.firstSighting));
+            flock.push(new Bird(bird.id, bird.commonName, bird.latinName, bird.image, bird.song, bird.firstSighting));
         });
     
         this.flock = flock;
