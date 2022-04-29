@@ -7,5 +7,7 @@ Bird.catchBirds().then(() => {
 
     Bird.find('Robin');
 
+    app.game = new FortunesGame();  
+
     app.midi = new MIDI();    
 });
