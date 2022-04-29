@@ -19,6 +19,10 @@ class Bird {
         return this.flock.find(bird => bird.commonName.toLowerCase() == name.toLowerCase());
     }
 
+    static findByID(id){
+        return this.flock.find(bird => bird.ID == id);
+    }
+
     static catchBirds = async () => {
         const response = await fetch("../js/birds.json");
         const json = await response.json();

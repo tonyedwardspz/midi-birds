@@ -6,6 +6,8 @@ Bird.catchBirds().then(() => {
     console.log('Flock ready');
 
     Bird.find('Robin');
+    
+    app.game = new PlayCardsGame();  
 
-    app.midi = new MIDI();    
+    app.midi = new MIDI(app.game.processKeyPress);
 });
