@@ -20,7 +20,6 @@ let output;
 
 class MIDI {
     constructor(){
-
         if (navigator.requestMIDIAccess) {
             console.log('Browser supports MIDI!');
     
@@ -32,20 +31,26 @@ class MIDI {
     }
 
     success (midi) {
-        console.log('Midi Ready');
+        app.midiReady = true;
+        console.log('Midi Ready: ', true);
+
         this.inputs = midi.inputs.values();
     
         for (let input = this.inputs.next();
             input && !input.done;
-            input = this.inputs.next()) {
+            input = this.inputs.next()) { 
             input.value.onmidimessage = this.onMIDIMessage;
         }
 
         this.outputs = midi.outputs.values();
-        this.keypadLightsRed(); 
+        
+        if (app.isIndex == false){
+            this.keypadLightsRed();
+        }
     }
-     
+
     failure () {
+        app.midiReady = false;
         console.error('No access to your midi devices.')
     }
 
@@ -54,8 +59,15 @@ class MIDI {
         // keys = [145/129, 48-72, 0-127] 
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
-        // console.log(message.data);
-        app.game.processKeyPress(message.data[0], message.data[1], message.data[2]);
+
+        if (app.isIndex){
+            console.log(message.data);
+            if (message.data[1] === 48) {
+                console.log(Bird.find('Robin').sing());
+            }
+        } else {
+            app.game.processKeyPress(message.data[0], message.data[1], message.data[2]);
+        }
     }
 
     keypadLightsOff(){
@@ -76,7 +88,7 @@ class MIDI {
             midimap.forEach( function( row, i ) {
                 row.forEach( function( value, j ) {
                     if (value === 35 || value === 36){
-                        commands.push( 0x90, value, GREEN_BLINK )
+                        commands.push( 0x90, value, GREEN )
                     } else {
                         commands.push( 0x90, value, RED )
                     }  

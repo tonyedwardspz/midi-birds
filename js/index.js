@@ -7,5 +7,9 @@ Bird.catchBirds().then(() => {
 
     Bird.find('Robin');
 
-    app.midi = new MIDI();    
+    app.isIndex = true;
+
+    app.midi = new MIDI();
+    
+    app.birdImageContainer = document.getElementById('#bird-image-container');
 });
