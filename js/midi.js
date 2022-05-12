@@ -62,8 +62,24 @@ class MIDI {
 
         if (app.isIndex){
             console.log(message.data);
-            if (message.data[1] === 48) {
-                console.log(Bird.find('Robin').sing());
+
+
+            if ((message.data[1] === 48) && message.data[0] === 145){ // Keyboard/On
+                let currentBird = Bird.findByID(message.data[1]);
+                
+
+                console.log(currentBird.sing());
+                app.songs[message.data[1]] = new Audio(currentBird.sing());
+                app.songs[message.data[1]].play();
+
+                app.birdImageContainer = document.getElementById('bird-image-container');
+                let birdImage = new Image(600, 400);
+                birdImage.src = `${currentBird.getImage()}`;
+                app.birdImageContainer.appendChild(birdImage);
+    
+            } else if ((message.data[1] === 48) && message.data[0]){ // Keyboard/Off
+                console.log('stopping singing');
+                app.songs[message.data[1]].pause();
             }
         } else {
             app.game.processKeyPress(message.data[0], message.data[1], message.data[2]);

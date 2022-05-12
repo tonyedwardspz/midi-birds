@@ -3,7 +3,7 @@
         "id": 48,
         "commonName": "Robin",
         "latinName": "Birdicus Maximus",
-        "image": ".images/file.jpg",
+        "image": "./images/robin.jpg",
         "imageCredit": "https://www.freeimages.com/photo/robin-1399976",
         "song": "./audio/robin.mp3",
         "songCredit": "https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/robin/",

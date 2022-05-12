@@ -16,6 +16,10 @@ class Bird {
         return this.song;
     }
 
+    getImage(){
+        return this.image;
+    }
+
     static find(name){
         return this.flock.find(bird => bird.commonName.toLowerCase() == name.toLowerCase());
     }
