@@ -1,8 +1,8 @@
 "use strict"
 
-class PlayCardsGame{
+class PlayCardsGame extends Game {
     constructor() {
-      
+        super();
     }
 
     processKeyPress(state, key, velocity){

@@ -2,7 +2,7 @@
 
 class FortunesGame{
     constructor() {
-      this.setupGameBoard();
+        this.setupGameBoard();
     }
 
     processKeyPress(state, key, velocity){
@@ -55,7 +55,9 @@ class FortunesGame{
 
         this.teamOneScoreBoard = document.getElementById('team-1-guess-board');
         this.teamTwoScoreBoard = document.getElementById('team-2-guess-board');
-        this.gameBoard = getElementById('game-board');
+        this.gameBoard = document.getElementById('game-board');
+
+        Game.setStatus('game', true);
     }
 
     higher(){

@@ -21,8 +21,6 @@ let output;
 class MIDI {
     constructor(){
         if (navigator.requestMIDIAccess) {
-            console.log('Browser supports MIDI!');
-    
             navigator.requestMIDIAccess()
                 .then(midi => {
                     this.success(midi);
@@ -31,8 +29,7 @@ class MIDI {
     }
 
     success (midi) {
-        app.midiReady = true;
-        console.log('Midi Ready: ', true);
+        Game.setStatus('midi', true);
 
         this.inputs = midi.inputs.values();
     
@@ -43,14 +40,13 @@ class MIDI {
         }
 
         this.outputs = midi.outputs.values();
-        
         if (app.isIndex == false){
             this.keypadLightsRed();
         }
     }
 
     failure () {
-        app.midiReady = false;
+        Game.setStatus('midi', false);
         console.error('No access to your midi devices.')
     }
 

@@ -7,18 +7,18 @@ header {
 }
 
 footer {
-    height: 10vh;
     width: 100vw;
 }
 
 footer ul {
     display: block;
     list-style: none;
+    width:100%;
 }
 
 footer ul li {
     display: inline-block;
-    margin-right: 10vw;
+    min-width: 20vw;
 }
 
 
@@ -41,7 +41,7 @@ footer ul li {
 
 .fortunes main {
     display: inline-block;
-    height: 70vh;
+    height: 65vh;
     width: 60vw;
 }
 

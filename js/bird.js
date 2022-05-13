@@ -12,7 +12,9 @@ class Bird {
         this.songCredit = songCredit;
         this.sightings = sightings;
 
-        console.info(`${this.id}: A ${this.commonName} has been caught`);
+        if (app.isIndex == true){
+            console.info(`${this.id}: A ${this.commonName} has been caught`);
+        }
     }
 
     sing() {
@@ -48,6 +50,7 @@ class Bird {
         });
     
         this.flock = flock;
+        Game.setStatus('flock', true);
         console.info(`---- We caught ${flock.length} birds ----`);
     }
   }
