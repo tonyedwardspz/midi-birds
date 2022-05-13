@@ -1,6 +1,8 @@
 let app = {
     songs: {},
-    status: {}
+    status: {},
+
+    answers:{}
 };
 
 Bird.catchBirds().then(() => {

@@ -3,6 +3,10 @@
 class FortunesGame{
     constructor() {
         this.setupGameBoard();
+        this.teamOneScore = 0;
+        this.teamTwoScore = 0;
+        this.currentGuess = {};
+        this.currentTeam = 100;
     }
 
     processKeyPress(state, key, velocity){
@@ -15,39 +19,38 @@ class FortunesGame{
             // fetch the bird selected
             // store selected bird in the game state
             console.log('Keypress received in game controller');
+
+            this.currentGuess = Bird.findByID(key);
+            app.songs[key] = new Audio(this.currentGuess.sing());
+            app.songs[key].play();
             
+            // Testing tech debt for talk
             if (state === 145 && key === 48) {
-                console.log(Bird.find('Robin').sing());
-                app.songs[key] = new Audio(Bird.find('Robin').sing());
-                app.songs[key].play();
-    
+                this.showAnswer(1);
             }
 
-
-            // update the view with the selected bird
-
         } else if ((key >= 48 && key <= 72) && state === 129){ // Keyboard/Off
-            // stop bird singing
             // Can't stop the rook, but you can pause it to allow the browser to garbage collect
-            console.log('stopping singing');
             app.songs[key].pause();
         }
 
         if ((key >= 0 && key <= 39) && state === 144){ // pad/on
-            // if the top left pad, select lower
+            
+            // Team 1 buttons
+            // outer left column for team 1 lights, answers 1 through 5 top to bottom
+            let teamOneBirdButtons = [32, 24, 16, 8, 0];
+            let teamOneWrongButton = 34;
+            let teamTwoBirdButtons = [39, 31, 23, 15, 7]
+            let teamTwoWrongButton = 37;
 
-            // if the top right pads, select higher
-
-            // if the bottom left, show answer
-
-            // if the bottom right, next round
-                // add bird to the top view row
-                // update the game state
-
-        } else if ((key >= 0 && key <= 39) && state === 128){ // pad/Off
-
+            if (teamOneBirdButtons.includes(key)){
+                this.currentTeam = 1;
+                this.showAnswer(teamOneBirdButtons.indexOf(key));
+            } else if (teamTwoBirdButtons.includes(key)){
+                this.currentTeam = 2;
+                this.showAnswer(teamTwoBirdButtons.indexOf(key));
+            }
         }
-        
     }
 
     setupGameBoard (){
@@ -58,33 +61,22 @@ class FortunesGame{
         this.gameBoard = document.getElementById('game-board');
 
         Game.setStatus('game', true);
+
+        let sortedBirds = Bird.sortBirdsBySighting();
+
+        for (let i = 0; i < 5; i++) {
+            app.answers[i] = sortedBirds[i];
+        }
+
+        console.log(app.answers);
     }
 
-    higher(){
-
+    showAnswer(answer){
+        let answerLi = document.getElementById('answer-' + answer);
+        answerLi.innerHTML = app.answers[answer].commonName + ' - ' + app.answers[answer].sightings;
     }
 
-    lower(){
+    updateTeamScore(team, score){
 
     }
-
-    showAnswer(){
-
-    }
-
-    stopSinging(){
-
-    }
-
-    addBirdToTopBar(){
-
-    }
-
-    addBirdToLeftPannel(){
-
-    }
-
-    addBirdToRightPanel(){
-        
-    }
-  }
+}

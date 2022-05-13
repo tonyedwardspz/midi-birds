@@ -29,7 +29,12 @@ footer ul li {
 .fortunes aside{
     display: inline-block;
     height: 70vh;
-    width: 19vw;
+    width: 18vw;
+}
+
+.fortunes aside ul {
+    /* list-style-type: none; */
+    /* padding-left: 10px */
 }
 
 .fortunes aside li {
