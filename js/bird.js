@@ -25,9 +25,9 @@ class Bird {
         return this.image;
     }
 
-    sortBirdsBySighting(){
-        this.flock.sort((a, b) => {
-            return a.sightings - b.sightings;
+    static sortBirdsBySighting(){
+        return this.flock.sort((a, b) => {
+            return b.sightings - a.sightings;
         });
     }
 
