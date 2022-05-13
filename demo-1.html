@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,15 +8,48 @@
     <meta name="description" content="A midi based bird interface">
     <meta name="author" content="Tony Edwards">
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/normalise.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
-<body>
-    <a href="index.html">Demo 0</a>
-    <a href="demo-1.html">Demo 1</a>
-    <a href="demo-2.html">Demo 2</a>
-    <button>I do nothing</button>
+<body class="fortunes"> 
+    <header>
+        <nav>
+            <a href="index.html">Demo 0</a>
+            <a href="demo-1.html">Demo 1</a>
+            <a href="demo-2.html">Demo 2</a>
+        </nav>
+        <button>I do nothing</button>
+
+    </header>
+
+    <aside>
+        <ul id="team-1-guess-board">
+            <li id="team-1-guess-1"></li>
+            <li id="team-1-guess-2"></li>
+            <li id="team-1-guess-3"></li>
+        </ul>
+    </aside>
+
+    <main id="game-board">
+        <h1>Flock Fortunes</h1>
+        <ol>
+            <li>XXXXXXXXXXXXXXXX</li>
+            <li>XXXXXXXXXXXXXXXX</li>
+            <li>XXXXXXXXXXXXXXXX</li>
+            <li>XXXXXXXXXXXXXXXX</li>
+            <li>XXXXXXXXXXXXXXXX</li>
+        </ol>
+    </main>
+
+    <aside>
+        <ul id="team-2-guess-board">
+            <li id="team-2-guess-1"></li>
+            <li id="team-2-guess-2"></li>
+            <li id="team-2-guess-3"></li>
+        </ul>
+    </aside>
  
     <script src="js/bird.js"></script>
     <script src="js/fortunesGame.js"></script>

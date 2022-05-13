@@ -1,1 +1,50 @@
+/* ----- Layout ----- */
 
+header {
+    display: block;
+    height: 10vh;
+    width: 100vw;
+}
+
+footer {
+    height: 10vh;
+    width: 100vw;
+}
+
+footer ul {
+    display: block;
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 10vw;
+}
+
+
+/* ----- Flock Fortunes Game ----- */
+
+/* Team scores on the left and right of the game board */
+
+.fortunes aside{
+    display: inline-block;
+    height: 70vh;
+    width: 19vw;
+}
+
+.fortunes aside li {
+    padding-top: 10vh;
+}
+
+
+/* The main game board which will show the answers by the end of the game */
+
+.fortunes main {
+    display: inline-block;
+    height: 70vh;
+    width: 60vw;
+}
+
+.fortunes main {
+    text-align: center;
+}
