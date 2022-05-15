@@ -6,6 +6,11 @@ header {
     width: 100vw;
 }
 
+header h1 {
+    float: right;
+    margin-right: 6px;
+}
+
 footer {
     width: 100vw;
 }
@@ -84,15 +89,43 @@ footer ul li {
 
   /* ----- Play Your Cards Right Game ----- */
 
-  .cards main {
-      display: inline-block;
-      height: 80vh;
-  }
+.cards h1{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
-  .cards .team-panel {
-      display: inline-block;
-      height: 30vh;
-      width: 100%;
-  }
+.cards main {
+    display: inline-block;
+    height: 80vh;
+    width: 100vw;
+}
 
+.cards .team-panel {
+    text-align: center;
+    display: inline-block;
+    height: 39vh;
+    width: 100%;
+}
 
+.cards .card-holder {
+    display: inline-block;
+    width: 19%;
+    height: 100%;
+    vertical-align: top;
+    border: 1px solid red;
+}
+
+.cards .card-holder img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.cards .card-holder h2 {
+    margin: 10px 0;
+}
+
+.cards .card-holder span {
+    font-size: large;
+    font-weight: bold;
+}
