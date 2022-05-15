@@ -44,6 +44,7 @@ class MIDI {
 
         this.outputs = midi.outputs.values();
         this.keypadLightsOff();
+        app.game.setupLights(true);
     }
 
     failure () {
