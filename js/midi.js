@@ -20,6 +20,7 @@ let output;
 
 class MIDI {
     constructor(){
+        this.outputs = {};
         if (navigator.requestMIDIAccess) {
             navigator.requestMIDIAccess()
                 .then(midi => {
@@ -29,7 +30,7 @@ class MIDI {
     }
 
     success (midi) {
-        if (app.game){
+        if (app.isGame){
             Game.setStatus('midi', true);
         }
 
@@ -42,16 +43,14 @@ class MIDI {
         }
 
         this.outputs = midi.outputs.values();
-        if (app.isIndex == false){
-            this.keypadLightsRed();
-        }
+        this.keypadLightsOff();
     }
 
     failure () {
-        if (app.game) {
+        if (app.isGame) {
             Game.setStatus('midi', false);
         }
-        console.error('No access to your midi devices.')
+        console.error('MIDI: No access to your midi devices.')
     }
 
     onMIDIMessage (message) {
@@ -59,7 +58,7 @@ class MIDI {
         // keys = [145/129, 48-72, 0-127] 
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
-        console.info('MIDI message received: ', message.data);
+        console.log(message.data);
 
         if (app.isIndex){
             if ((message.data[1] === 48) && message.data[0] === 145){ // Keyboard/On
@@ -75,7 +74,7 @@ class MIDI {
                 app.birdImageContainer.appendChild(birdImage);
     
             } else if ((message.data[1] === 48) && message.data[0]){ // Keyboard/Off
-                console.log('stopping singing');
+                console.log('MIDI: stopping singing');
                 app.songs[message.data[1]].pause();
             }
         } else {
@@ -84,40 +83,26 @@ class MIDI {
     }
 
     keypadLightsOff(){
-        var commands = []
-		midimap.forEach( function( row, i ) {
-			row.forEach( function( value, j ) {
-				commands.push(0x90, value, OFF)
-			})
-		})
-		output.send(commands)
-    };
-
-    keypadLightsRed(){
+        console.log('MIDI: Pad lights off');
         for (let o = this.outputs.next(); o && !o.done; o = this.outputs.next()) {
             output = o.value;
-
-            let commands = []
+            var commands = []
             midimap.forEach( function( row, i ) {
                 row.forEach( function( value, j ) {
-                    if (value === 35 || value === 36){
-                        commands.push( 0x90, value, GREEN )
-                    } else {
-                        commands.push( 0x90, value, RED )
-                    }  
-                });
-            });
-            output.send( commands );
+                    commands.push(0x90, value, OFF)
+                })
+            })
+            output.send(commands);
         }
-    }
+    };
 
     switchOnLights(lights){
-        console.log('Switching on lights');
+        console.log('MIDI: Switching on lights', lights);
 
         let commands = []
-            lights.forEach(light => {
-                commands.push( 0x90, light[0], light[1] )
-            });
+        lights.forEach(light => {
+            commands.push( 0x90, light[0], light[1] )
+        });
         output.send( commands );
     }
 }

@@ -1,5 +1,6 @@
 let app = {
-    songs: {}
+    songs: {},
+    isIndex: true
 };
 
 Bird.catchBirds().then(() => {
@@ -7,9 +8,5 @@ Bird.catchBirds().then(() => {
 
     Bird.find('Robin');
 
-    app.isIndex = true;
-
     app.midi = new MIDI();
-    
-    app.birdImageContainer = document.getElementById('#bird-image-container');
 });

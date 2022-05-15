@@ -21,6 +21,11 @@ class Bird {
         return this.song;
     }
 
+    playSong(){
+        app.songs[this.id] = new Audio(this.song);
+        app.songs[this.id].play();
+    }
+
     getImage(){
         return this.image;
     }
@@ -51,7 +56,7 @@ class Bird {
     
         this.flock = flock;
 
-        if (app.game){
+        if (app.isGame){
             Game.setStatus('flock', true);
         }
         console.info(`---- We caught ${flock.length} birds ----`);
