@@ -8,7 +8,10 @@ class PlayCardsGame extends Game {
     constructor() {
         super();
         this.currentTeam = 0;
-        
+        this.currentBird = {};
+
+        this.round = [0,0];
+
         Game.setStatus('game', true);
     }
 
@@ -20,14 +23,14 @@ class PlayCardsGame extends Game {
         // dials = [176, 48-59, 0-127]
 
         if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
-            let currentBird = Bird.findByID(key);
-            // store selected bird in the game state
+            this.currentBird = Bird.findByID(key);
             
             // Play the song
-            app.songs[key] = new Audio(currentBird.sing());
+            app.songs[key] = new Audio(this.currentBird.sing());
             app.songs[key].play();
 
             // update the view with the selected bird
+            this.updateCard(this.currentBird);
 
         } else if ((key >= 48 && key <= 72) && state === 129){ // Keyboard/Off
             // stop bird singing
@@ -41,6 +44,8 @@ class PlayCardsGame extends Game {
             if (this.currentTeam === 0) {
                 this.currentTeam = this.initialPlayerSelect(key);
                 this.setupLights();
+                this.round[this.currentTeam - 1]++;
+                console.log('GAME round: ', this.round)
                 return;
             }
             
@@ -52,23 +57,17 @@ class PlayCardsGame extends Game {
                 this.higher(2);
             } else if (key === 7){
                 this.lower(2);
-            } else if (key === 35 || key === 36){
-                this.beginGame();
             }
-            // add bird to the top view row
-            // update the game state
-
-        } else if ((key >= 0 && key <= 39) && state === 128){ // pad/Off
-
         }
-        
     }
 
     higher(){
+        this.round[this.currentTeam -1]++;
         console.log('GAME: Higher');
     }
 
     lower(){
+        this.round[this.currentTeam -1]++;
         console.log('GAME: Lower');
     }
 
@@ -80,25 +79,12 @@ class PlayCardsGame extends Game {
         console.log('GAME: Next Round');
     }
 
-    beginGame(){
-        console.log('GAME: Begin Game');
-        this.setupLights();
-    }
+    updateCard(bird){
+        let html = `<h2>${bird.commonName}</h2>
+                    <span>${bird.sightings}</span>
+                    <img src="${bird.image}">`
+        document.getElementById('team-' + this.currentTeam + '-card-' + this.round[this.currentTeam - 1]).innerHTML = html;
 
-    stopSinging(){
-
-    }
-
-    addBirdToTopBar(){
-
-    }
-
-    addBirdToLeftPannel(){
-
-    }
-
-    addBirdToRightPanel(){
-        
     }
 
     initialPlayerSelect(key){

@@ -43,8 +43,10 @@ class MIDI {
         }
 
         this.outputs = midi.outputs.values();
-        this.keypadLightsOff();
-        app.game.setupLights(true);
+        if (this.keypadLightsOff()) {
+            app.game.setupLights(true);
+        }
+        
     }
 
     failure () {
@@ -95,7 +97,8 @@ class MIDI {
             })
             output.send(commands);
         }
-    };
+        return true;
+    }
 
     switchOnLights(lights){
         console.log('MIDI: Switching on lights', lights);
@@ -104,6 +107,6 @@ class MIDI {
         lights.forEach(light => {
             commands.push( 0x90, light[0], light[1] )
         });
-        output.send( commands );
+        output.send(commands);   
     }
 }

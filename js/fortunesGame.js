@@ -109,6 +109,10 @@ class FortunesGame{
         } 
     }
 
+    setupLights(){
+        // Interface method
+    }
+
     showAnswer(answer){
         let answerLi = document.getElementById('answer-' + answer);
         answerLi.innerHTML = app.answers[answer].commonName + ' - ' + app.answers[answer].sightings;
