@@ -21,30 +21,39 @@ class FortunesGame{
         this.teamTwoWrongButton = 37;
         this.teamTwoIncorrectGuesses = 0;
 
+        this.teamSelected = false;
+
         this.lastPad = 0;
         padColorMap = padTeam1.concat(padTeam2).concat(padIncorrect);
     }
 
     processKeyPress(state, key, velocity){
-        if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
+        if ((key >= 48 && key <= 72) && state === 145 && (this.teamSelected === false)){ // Keyboard/On
             console.log('GAME: Key press received in game controller');
             
             if (this.guessNumber === 0){
                 app.midi.switchOnLights(padColorMap);
+                this.teamSelected = true;
             
                 if (key === 48) { // Team 1
+                    new Audio('./audio/effects/team-buzzer.mp3').play();
                     console.log('Team 1 won the buzzer press');
                     this.currentTeam = 1;
-                    alert('Team 1');
+                    document.getElementById('team-1').classList.add('blink');
                 } else if (key === 72) { // Team 2
+                    new Audio('./audio/effects/team-buzzer.mp3').play();
                     console.log('Team 2 won the buzzer press');
                     this.currentTeam = 2;
-                    alert('Team 2');
+                    document.getElementById('team-2').classList.add('blink');
                 } 
             }
         }
 
         if ((key >= 0 && key <= 39) && state === 144){ // pad/on
+            // TODO: Make this more fancy
+            document.getElementById('team-1').classList.remove('blink');
+            document.getElementById('team-2').classList.remove('blink');
+
             console.log('GAME: Pad press received in game controller');
             this.lastPad = key;
             
@@ -70,10 +79,6 @@ class FortunesGame{
 
     setupGameBoard (){
         console.log('GAME: Setting up Game Board')
-
-        this.teamOneScoreBoard = document.getElementById('team-1-guess-board');
-        this.teamTwoScoreBoard = document.getElementById('team-2-guess-board');
-        this.gameBoard = document.getElementById('game-board');
 
         let sortedBirds = Bird.sortBirdsBySighting();
 
@@ -153,14 +158,13 @@ class FortunesGame{
         this.currentTeam = team;
         team === 1 ? this.teamOneIncorrectGuesses++ : this.teamTwoIncorrectGuesses++;
 
+        let guessLi = document.querySelectorAll('li.team-' + team + '-guess-empty');
+        guessLi[0].classList.remove('team-' + team + '-guess-empty');
+        guessLi[0].innerHTML = 'X'
+
         if (this.teamOneIncorrectGuesses === 3 || this.teamTwoIncorrectGuesses === 3) {
             this.gameOver('maxGuesses');
         }
-
-        let guessLi = document.querySelectorAll('li.team-' + team + '-guess-empty');
-        guessLi[0].classList.remove('team-' + team + '-guess-empty');
-        console.log(guessLi);
-        guessLi[0].innerHTML = 'X'
     }
 
     gameOver(type){
