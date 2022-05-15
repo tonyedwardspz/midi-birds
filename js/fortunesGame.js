@@ -65,7 +65,7 @@ class FortunesGame{
 
         let sortedBirds = Bird.sortBirdsBySighting();
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 6; i++) {
             app.answers[i] = sortedBirds[i];
         }
         console.log(app.answers);
@@ -92,6 +92,8 @@ class FortunesGame{
     updateTeamScore(team, score){
         this.scores[team - 1] += score;
         console.table('GAME: Scores: ', this.scores);
+        let container = document.getElementById('team-' + team + '-score');
+        container.innerHTML = this.scores[team - 1];
     }
 
     wrongGuess(team){

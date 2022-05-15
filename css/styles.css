@@ -30,11 +30,18 @@ footer ul li {
     display: inline-block;
     height: 70vh;
     width: 18vw;
+    text-align: center;
+}
+
+.fortunes aside h2 {
+    padding-top: 10vh;
+    margin-bottom: 0;
 }
 
 .fortunes aside ul {
-    /* list-style-type: none; */
-    /* padding-left: 10px */
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 10vh;
 }
 
 .fortunes aside li {
@@ -46,10 +53,19 @@ footer ul li {
 
 .fortunes main {
     display: inline-block;
-    height: 65vh;
+    vertical-align: top;
+    height: 80vh;
     width: 60vw;
-}
-
-.fortunes main {
     text-align: center;
 }
+
+.fortunes #game-board {
+    padding-top: 22vh;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+    .fortunes #game-board {
+        width: 40vw;
+    }
+  }
