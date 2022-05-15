@@ -1,13 +1,14 @@
 let app = {
-    songs: {}
+    midi: {},
+    songs: {},
+    status: {},
+
+    isGame: true
 };
 
 Bird.catchBirds().then(() => {
     console.log('Flock ready');
-
-    Bird.find('Robin');
     
-    app.game = new PlayCardsGame();  
-
+    app.game = new PlayCardsGame();
     app.midi = new MIDI();
 });

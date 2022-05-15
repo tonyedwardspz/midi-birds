@@ -80,3 +80,19 @@ footer ul li {
         width: 40vw;
     }
   }
+
+
+  /* ----- Play Your Cards Right Game ----- */
+
+  .cards main {
+      display: inline-block;
+      height: 80vh;
+  }
+
+  .cards .team-panel {
+      display: inline-block;
+      height: 30vh;
+      width: 100%;
+  }
+
+

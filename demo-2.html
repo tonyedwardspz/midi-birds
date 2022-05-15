@@ -5,21 +5,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Midi Birds</title>
+    <title>Play Your Birds Right</title>
     <meta name="description" content="A midi based bird interface">
     <meta name="author" content="Tony Edwards">
 
+    <link rel="stylesheet" href="css/normalise.css">
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
-<body>
-    <a href="index.html">Demo 0</a>
-    <a href="demo-1.html">Demo 1</a>
-    <a href="demo-2.html">Demo 2</a>
-    <button>I do nothing</button>
+<body class="cards">
+    <header>
+        <nav>
+            <a href="index.html">Demo 0</a>
+            <a href="demo-1.html">Demo 1</a>
+            <a href="demo-2.html">Demo 2</a>
+        </nav>
+        <button>I do nothing</button>
 
+    </header>
 
+    <main>
+        <h1>Play Your Birds Right</h1>
+
+        <div id="team-1" class="team-panel">
+            <div id="team-1-card-1" class="card-holder"></div>
+            <div id="team-1-card-2" class="card-holder"></div>
+            <div id="team-1-card-3" class="card-holder"></div>
+            <div id="team-1-card-4" class="card-holder"></div>
+            <div id="team-1-card-5" class="card-holder"></div>
+        </div>
+
+        <div id="team-2" class="team-panel">
+            <div id="team-2-card-1" class="card-holder"></div>
+            <div id="team-2-card-2" class="card-holder"></div>
+            <div id="team-2-card-3" class="card-holder"></div>
+            <div id="team-2-card-4" class="card-holder"></div>
+            <div id="team-2-card-5" class="card-holder"></div>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li>Midi <span id="status-midi"></span></li>
+            <li>Birds <span id="status-flock"></span></li>
+            <li>Game <span id="status-game"></span></li>
+        </ul>
+    </footer>
  
     <script src="js/bird.js"></script>
     <script src="js/game.js"></script>

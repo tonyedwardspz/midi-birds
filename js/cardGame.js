@@ -3,6 +3,8 @@
 class PlayCardsGame extends Game {
     constructor() {
         super();
+
+        Game.setStatus('game', true);
     }
 
     processKeyPress(state, key, velocity){
