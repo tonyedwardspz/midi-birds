@@ -1,4 +1,5 @@
 let app = {
+    game: true,
     songs: {},
     status: {},
 

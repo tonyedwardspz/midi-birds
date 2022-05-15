@@ -29,10 +29,12 @@ class MIDI {
     }
 
     success (midi) {
-        Game.setStatus('midi', true);
+        if (app.game){
+            Game.setStatus('midi', true);
+        }
 
         this.inputs = midi.inputs.values();
-    
+
         for (let input = this.inputs.next();
             input && !input.done;
             input = this.inputs.next()) { 
@@ -46,7 +48,9 @@ class MIDI {
     }
 
     failure () {
-        Game.setStatus('midi', false);
+        if (app.game) {
+            Game.setStatus('midi', false);
+        }
         console.error('No access to your midi devices.')
     }
 
@@ -55,14 +59,11 @@ class MIDI {
         // keys = [145/129, 48-72, 0-127] 
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
+        console.info('MIDI message received: ', message.data);
 
         if (app.isIndex){
-            console.log(message.data);
-
-
             if ((message.data[1] === 48) && message.data[0] === 145){ // Keyboard/On
                 let currentBird = Bird.findByID(message.data[1]);
-                
 
                 console.log(currentBird.sing());
                 app.songs[message.data[1]] = new Audio(currentBird.sing());

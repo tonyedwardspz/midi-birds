@@ -50,7 +50,10 @@ class Bird {
         });
     
         this.flock = flock;
-        Game.setStatus('flock', true);
+
+        if (app.game){
+            Game.setStatus('flock', true);
+        }
         console.info(`---- We caught ${flock.length} birds ----`);
     }
   }
