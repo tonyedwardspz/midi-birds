@@ -15,11 +15,6 @@ class FortunesGame{
     }
 
     processKeyPress(state, key, velocity){
-        // [on/off, key, velocity]
-        // keys = [145/129, 48-72, 0-127] 
-        // pads = [144/128, 0-39, 127]
-        // dials = [176, 48-59, 0-127]
-
         if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
             console.log('GAME: Key press received in game controller');
             
@@ -49,6 +44,12 @@ class FortunesGame{
                 this.currentTeam = 2;
                 this.checkAnswer(this.teamTwoBirdButtons.indexOf(key), 2)
                 this.showAnswer(this.teamTwoBirdButtons.indexOf(key));
+            }
+
+            if (key === this.teamOneWrongButton) {
+                this.wrongGuess(1);
+            } else if (key === this.teamTwoWrongButton) {
+                this.wrongGuess(2)
             }
         }
     }
@@ -80,8 +81,7 @@ class FortunesGame{
             console.log('Answer: ', answer);
             this.updateTeamScore(team, answer.sightings);
             this.showAnswer(guess);
-        }
-        
+        } 
     }
 
     showAnswer(answer){
@@ -93,4 +93,11 @@ class FortunesGame{
         this.scores[team - 1] += score;
         console.table('GAME: Scores: ', this.scores);
     }
+
+    wrongGuess(team){
+        let guessLi = document.querySelectorAll('li.team-' + team + '-guess-empty');
+        guessLi[0].classList.remove('team-' + team + '-guess-empty');
+        console.log(guessLi);
+        guessLi[0].innerHTML = 'X'
+    } 
 }
