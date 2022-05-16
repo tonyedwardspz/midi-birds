@@ -101,7 +101,7 @@ class MIDI {
     }
 
     switchOnLights(lights){
-        console.log('MIDI: Switching on lights', lights);
+        console.log('MIDI: Switching on lights');
 
         let commands = []
         lights.forEach(light => {

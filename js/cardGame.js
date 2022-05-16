@@ -2,13 +2,16 @@
 
 const padLights =  [[32, 1], [0, 5],
                     [39, 1], [7, 5],
-                    [36,1], [3, 3]] 
+                    [36,1]] 
 
 class PlayCardsGame extends Game {
     constructor() {
         super();
         this.currentTeam = 0;
         this.currentBird = {};
+        this.allBirdIDs = [];
+        this.hasSelected = false;
+        
 
         this.round = [0,0];
 
@@ -22,17 +25,23 @@ class PlayCardsGame extends Game {
         // pads = [144/128, 0-39, 127]
         // dials = [176, 48-59, 0-127]
 
-        if ((key >= 48 && key <= 72) && state === 145){ // Keyboard/On
+        if ((key >= 48 && key <= 72) && state === 145 && !this.hasSelected){ // Keyboard/On
+            this.hasSelected = true;
+            
             this.currentBird = Bird.findByID(key);
             
-            // Play the song
-            app.songs[key] = new Audio(this.currentBird.sing());
-            app.songs[key].play();
+            if (this.allBirdIDs.includes(key)){
+                alert('Select Again');
+            } else {
+                this.allBirdIDs.push(key);
+                // Play the song
+                app.songs[key] = new Audio(this.currentBird.sing());
+                app.songs[key].play();
 
-            // update the view with the selected bird
-            this.updateCard(this.currentBird);
-
-        } else if ((key >= 48 && key <= 72) && state === 129){ // Keyboard/Off
+                // update the view with the selected bird
+                this.addCard(this.currentBird);
+            }
+        } else if ((key >= 48 && key <= 72) && state === 129 && !this.hasSelected){ // Keyboard/Off
             // stop bird singing
             // Can't stop the rook, but you can pause it to allow the browser to garbage collect
             console.log('stopping singing');
@@ -45,6 +54,7 @@ class PlayCardsGame extends Game {
                 this.currentTeam = this.initialPlayerSelect(key);
                 this.setupLights();
                 this.round[this.currentTeam - 1]++;
+                this.addCard(Bird.getRandomBird());
                 console.log('GAME round: ', this.round)
                 return;
             }
@@ -57,34 +67,43 @@ class PlayCardsGame extends Game {
                 this.higher(2);
             } else if (key === 7){
                 this.lower(2);
+            } else if (key === 36){
+                this.showAnswer();
             }
         }
     }
 
-    higher(){
-        this.round[this.currentTeam -1]++;
+    higher(team){
         console.log('GAME: Higher');
     }
 
-    lower(){
-        this.round[this.currentTeam -1]++;
+    lower(team){
         console.log('GAME: Lower');
     }
 
     showAnswer(){
         console.log('GAME: Show Answer');
+        this.hasSelected = false;
+
+        // Add sightings to the last card
+        this.addSightings(this.currentBird);
+        this.round[this.currentTeam -1]++;
     }
 
-    nextRound(){
-        console.log('GAME: Next Round');
-    }
-
-    updateCard(bird){
+    addCard(bird){
         let html = `<h2>${bird.commonName}</h2>
-                    <span>${bird.sightings}</span>
+                    <span id="bird-${bird.id}-sightings">&nbsp;</span>
                     <img src="${bird.image}">`
         document.getElementById('team-' + this.currentTeam + '-card-' + this.round[this.currentTeam - 1]).innerHTML = html;
 
+        if (this.round[this.currentTeam -1] === 1){
+            this.addSightings(bird);
+            this.round[this.currentTeam -1]++;
+        }
+    }
+
+    addSightings(bird){
+        document.getElementById('bird-' + bird.id + '-sightings').innerHTML = bird.sightings;
     }
 
     initialPlayerSelect(key){

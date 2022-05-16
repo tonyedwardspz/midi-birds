@@ -30,6 +30,10 @@ class Bird {
         return this.image;
     }
 
+    static getRandomBird(){
+        return this.flock[Math.floor(Math.random() * this.flock.length)];
+    }
+
     static sortBirdsBySighting(){
         return this.flock.sort((a, b) => {
             return b.sightings - a.sightings;
