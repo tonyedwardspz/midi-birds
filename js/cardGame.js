@@ -11,6 +11,11 @@ class PlayCardsGame extends Game {
         this.currentBird = {};
         this.allBirdIDs = [];
         this.hasSelected = false;
+
+        this.teamOneBirds = [];
+        this.teamTwoBirds = [];
+
+        this.higherLower = null;
         
 
         this.round = [0,0];
@@ -32,8 +37,11 @@ class PlayCardsGame extends Game {
             
             if (this.allBirdIDs.includes(key)){
                 alert('Select Again');
+                this.hasSelected = false;
             } else {
-                this.allBirdIDs.push(key);
+                
+                this.saveBird(this.currentBird);
+
                 // Play the song
                 app.songs[key] = new Audio(this.currentBird.sing());
                 app.songs[key].play();
@@ -54,31 +62,66 @@ class PlayCardsGame extends Game {
                 this.currentTeam = this.initialPlayerSelect(key);
                 this.setupLights();
                 this.round[this.currentTeam - 1]++;
-                this.addCard(Bird.getRandomBird());
+
+                let starterBird = Bird.getRandomBird();
+                this.addCard(starterBird);
+                this.saveBird(starterBird);
                 console.log('GAME round: ', this.round)
                 return;
             }
             
             if(key === 32){
-                this.higher(1);
+                this.higher();
             } else if (key === 0) {
-                this.lower(1);
+                this.lower();
             } else if (key === 39) {
-                this.higher(2);
+                this.higher();
             } else if (key === 7){
-                this.lower(2);
+                this.lower();
             } else if (key === 36){
                 this.showAnswer();
             }
         }
     }
 
-    higher(team){
-        console.log('GAME: Higher');
+    saveBird(bird){
+        if (this.currentTeam === 1){
+            this.teamOneBirds.push(bird.id);
+        } else {
+            this.teamTwoBirds.push(bird.id);
+        }
+        this.allBirdIDs.push(bird.id);
     }
 
-    lower(team){
+    higher(){
+        console.log('GAME: Higher');
+        this.higherLower = true;
+    }
+
+    lower(){
         console.log('GAME: Lower');
+        this.higherLower = false;
+    }
+
+    // selection = true / false = higher / lower
+    calculateAnswer(selection){
+        console.log('GAME: Calculating answer');
+        let birds = [];
+        if (this.currentTeam === 1){
+            birds = this.teamOneBirds;
+        } else {
+            birds = this.teamTwoBirds;
+        }
+        console.log('GAME: This teams birds: ', birds);
+        let lastBird = Bird.findByID(birds[birds.length - 2]);
+
+        console.log('GAME: Comparing ' + this.currentBird.commonName + ' with ' + lastBird.commonName);
+        let answer = this.currentBird.sightings > lastBird.sightings;
+        if (answer === this.higherLower){
+            alert('correct');
+        } else {
+            alert('incorrect');
+        }
     }
 
     showAnswer(){
@@ -88,6 +131,8 @@ class PlayCardsGame extends Game {
         // Add sightings to the last card
         this.addSightings(this.currentBird);
         this.round[this.currentTeam -1]++;
+
+        this.calculateAnswer();
     }
 
     addCard(bird){
