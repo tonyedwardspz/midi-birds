@@ -113,6 +113,10 @@ class PlayCardsGame extends Game {
             alert('incorrect');
             this.changeTeam(this.currentTeam);
         }
+
+        if (birds.length === 5){
+            alert('Winner Winner Chicken Dinner');
+        }
     }
 
     showAnswer(){
