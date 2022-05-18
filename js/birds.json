@@ -4,126 +4,114 @@
         "commonName": "Robin",
         "latinName": "Birdicus Maximus",
         "image": "./images/robin.jpg",
-        "imageCredit": "https://www.freeimages.com/photo/robin-1399976",
+        "imageCredit": "Tony Edwards",
         "song": "./audio/robin.mp3",
         "songCredit": "https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/robin/",
-        "sightings": 45
+        "sightings": 29
     },
     {
         "id": 49,
         "commonName": "Gray Heron",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 12
+        "sightings": 1
     },
     {
         "id": 50,
         "commonName": "Jackdaw",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
-        "song": "./audio/song.mp3",
-        "songCredit": "url",
-        "sightings": 13
-    },
-    {
-        "id": 51,
-        "commonName": "Blackbird",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
-        "song": "./audio/song.mp3",
-        "songCredit": "url",
-        "sightings": 19
-    },
-    {
-        "id": 52,
-        "commonName": "Wood Pigeon",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
-        "song": "./audio/song.mp3",
-        "songCredit": "url",
-        "sightings": 4
-    },
-    {
-        "id": 53,
-        "commonName": "House Sparrow",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
         "sightings": 9
     },
     {
-        "id": 54,
-        "commonName": "Great Tit",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "id": 51,
+        "commonName": "Blackbird",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 19
+        "sightings": 4
+    },
+    {
+        "id": 52,
+        "commonName": "Wood Pigeon",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": 9
+    },
+    {
+        "id": 53,
+        "commonName": "House Sparrow",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": 34
+    },
+    {
+        "id": 54,
+        "commonName": "Great Tit",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
+        "imageCredit": "url",
+        "song": "./audio/song.mp3",
+        "songCredit": "url",
+        "sightings": 14
     },
     {
         "id": 55,
         "commonName": "Herring Gull",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
+        "image": "images/herringgull.jpg",
+        "imageCredit": "Tony Edwards",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 59
+        "sightings": 13
     },
     {
         "id": 56,
         "commonName": "Raven",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 26
+        "sightings": 3
     },
     {
         "id": 57,
         "commonName": "Collared Dove",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 29
+        "sightings": 7
     },
     {
         "id": 58,
         "commonName": "Wren",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 19
+        "sightings": 2
     },
     {
         "id": 59,
         "commonName": "Tawny Owl",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 10
+        "sightings": 3
     },
     {
         "id": 60,
         "commonName": "Buzzard",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
@@ -132,59 +120,53 @@
     {
         "id": 61,
         "commonName": "Firecrest",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 6
+        "sightings": 2
     },
     {
         "id": 62,
         "commonName": "Starling",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 19
+        "sightings": 1
     },
     {
         "id": 63,
         "commonName": "Rook",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 20
+        "sightings": 8
     },
     {
         "id": 64,
         "commonName": "Long Tailed Tit",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 28
+        "sightings": 15
     },
     {
         "id": 65,
         "commonName": "Loon",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 24
+        "sightings": 2
     },
     {
         "id": 66,
         "commonName": "Chaffinch",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
+        "image": "./image/chaffinch.jpg",
+        "imageCredit": "Sophie Rogers",
         "song": "./audio/song.mp3",
         "songCredit": "url",
         "sightings": 22
@@ -192,61 +174,55 @@
     {
         "id": 67,
         "commonName": "Blue Tit",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 17
+        "sightings": 6
     },
     {
         "id": 68,
         "commonName": "Spotted Flycatcher",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 16
+        "sightings": 1
     },
     {
         "id": 69,
         "commonName": "Coal Tit",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 19
+        "sightings": 1
     },
     {
         "id": 70,
         "commonName": "Ruddy Turnstone",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
-        "imageCredit": "url",
+        "image": "images/ruddyturnstone.jpg",
+        "imageCredit": "Tony Edwards",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 10
+        "sightings": 1
     },
     {
         "id": 71,
         "commonName": "Dunnock",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 18
+        "sightings": 13
     },
     {
         "id": 72,
         "commonName": "Goldfinch",
-        "latinName": "Birdicus Minimus",
-        "image": ".images/file.jpg",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
         "song": "./audio/song.mp3",
         "songCredit": "url",
-        "sightings": 34
+        "sightings": 10
     }
 ]
