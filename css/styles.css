@@ -103,9 +103,29 @@ footer ul li {
 .cards .team-panel {
     text-align: center;
     display: inline-block;
-    height: 39vh;
-    width: 100%;
+    height: 37vh;
+    width: 95%;
+    padding-bottom: 12px;
+    padding-left: 7px;
+    margin-bottom: 12px;
+    margin-left: 2.5vw;
 }
+
+.cards #team-1.active {
+    border-bottom: 3px solid red;
+    border-left: 3px solid red;
+    padding-bottom: 9px;
+    padding-left: 4px;
+}
+
+.cards #team-2.active {
+    border-bottom: 3px solid blue;
+    border-left: 3px solid blue;
+    padding-bottom: 9px;
+    padding-left: 4px;
+}
+
+
 
 .cards .card-holder {
     display: inline-block;

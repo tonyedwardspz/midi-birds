@@ -17,7 +17,6 @@ class PlayCardsGame extends Game {
 
         this.higherLower = null;
         
-
         this.round = [0,0];
 
         Game.setStatus('game', true);
@@ -25,29 +24,20 @@ class PlayCardsGame extends Game {
 
     processKeyPress(state, key, velocity){
         console.log('Keypress received in game controller', key, state, velocity);
-        // [on/off, key, velocity]
-        // keys = [145/129, 48-72, 0-127] 
-        // pads = [144/128, 0-39, 127]
-        // dials = [176, 48-59, 0-127]
 
         if ((key >= 48 && key <= 72) && state === 145 && !this.hasSelected){ // Keyboard/On
             this.hasSelected = true;
-            
             this.currentBird = Bird.findByID(key);
             
             if (this.allBirdIDs.includes(key)){
                 alert('Select Again');
                 this.hasSelected = false;
             } else {
-                
                 this.saveBird(this.currentBird);
+                this.addCard(this.currentBird);
 
-                // Play the song
                 app.songs[key] = new Audio(this.currentBird.sing());
                 app.songs[key].play();
-
-                // update the view with the selected bird
-                this.addCard(this.currentBird);
             }
         } else if ((key >= 48 && key <= 72) && state === 129 && !this.hasSelected){ // Keyboard/Off
             // stop bird singing
@@ -61,11 +51,10 @@ class PlayCardsGame extends Game {
             if (this.currentTeam === 0) {
                 this.currentTeam = this.initialPlayerSelect(key);
                 this.setupLights();
-                this.round[this.currentTeam - 1]++;
+                this.round = [1,1];
 
-                let starterBird = Bird.getRandomBird();
-                this.addCard(starterBird);
-                this.saveBird(starterBird);
+                this.starterBird();
+                this.updateTeam(this.currentTeam);
                 console.log('GAME round: ', this.round)
                 return;
             }
@@ -117,10 +106,12 @@ class PlayCardsGame extends Game {
 
         console.log('GAME: Comparing ' + this.currentBird.commonName + ' with ' + lastBird.commonName);
         let answer = this.currentBird.sightings > lastBird.sightings;
+        
         if (answer === this.higherLower){
-            alert('correct');
+            // correct
         } else {
             alert('incorrect');
+            this.changeTeam(this.currentTeam);
         }
     }
 
@@ -128,7 +119,6 @@ class PlayCardsGame extends Game {
         console.log('GAME: Show Answer');
         this.hasSelected = false;
 
-        // Add sightings to the last card
         this.addSightings(this.currentBird);
         this.round[this.currentTeam -1]++;
 
@@ -149,6 +139,33 @@ class PlayCardsGame extends Game {
 
     addSightings(bird){
         document.getElementById('bird-' + bird.id + '-sightings').innerHTML = bird.sightings;
+    }
+
+    changeTeam(team){
+        console.log('GAME: Change team');
+        this.hasSelected = false;
+        if (team === 1){
+            this.updateTeam(2);
+        } else {
+            this.updateTeam(1);
+        }
+
+        console.log('GAME:this.round');
+        console.log(this.currentTeam);
+        console.log(team);
+        if (this.round[this.currentTeam -1] === 1){
+            console.log('calling starter bird');
+            this.starterBird();
+        }
+
+        return this.currentTeam;
+    }
+
+    starterBird(){
+        console.log('GAME: Starter Bird');
+        let starterBird = Bird.getRandomBird();
+        this.addCard(starterBird);
+        this.saveBird(starterBird);
     }
 
     initialPlayerSelect(key){
@@ -175,8 +192,11 @@ class PlayCardsGame extends Game {
 
     updateTeam(team){
         console.log('GAME: Team ' + team + ' selected');
+
         this.currentTeam = team;
-        document.getElementById('current-team').innerHTML = team;
+        let otherTeam = team === 1? 2 : 1;
+        document.getElementById('team-' + team).classList.add('active');
+        document.getElementById('team-' + otherTeam).classList.remove('active');
     }
 
     setupLights(init){
