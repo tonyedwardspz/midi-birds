@@ -165,8 +165,8 @@
     {
         "id": 66,
         "commonName": "Chaffinch",
-        "image": "./images/chaffinch.jpg",
-        "imageCredit": "Sophie Rogers",
+        "image": "https://placeimg.com/500/500/animals/grayscale",
+        "imageCredit": "URL",
         "song": "./audio/song.mp3",
         "songCredit": "url",
         "sightings": 22
