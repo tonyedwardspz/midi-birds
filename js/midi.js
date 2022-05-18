@@ -43,7 +43,7 @@ class MIDI {
         }
 
         this.outputs = midi.outputs.values();
-        if (this.keypadLightsOff() && app.game === true) {
+        if (this.keypadLightsOff() && app.isGame === true) {
             app.game.setupLights(true);
         }
         
