@@ -28,6 +28,16 @@ footer ul li {
     min-width: 15vw;
 }
 
+main {
+    display: inline-block;
+    height: 80vh;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
 .blink {
     animation: blinker 1s infinite;
     text-decoration: underline;
@@ -38,6 +48,37 @@ footer ul li {
     50% { opacity: 0.5; }
     to { opacity: 1.0; }
 }
+
+
+/* ----- Demo 1 ----- */
+
+.demo main {
+    width: 95%;
+    margin: 0 2.5vw;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.demo #bird-data {
+    display: inline-block;
+    text-align: left;
+    width: 38%;
+    padding-left: 2%;
+    word-break: break-all;
+}
+
+.demo #bird-image-container {
+    height: 70vh;
+    width:60%;
+    float: right;
+}
+
+.demo img {
+    width: auto;
+    max-width: 90%;
+    max-height: 100%;
+}
+
 
 
 /* ----- Flock Fortunes Game ----- */
@@ -70,9 +111,7 @@ footer ul li {
 /* The main game board which will show the answers by the end of the game */
 
 .fortunes main {
-    display: inline-block;
     vertical-align: top;
-    height: 80vh;
     width: 60vw;
     text-align: center;
 }
@@ -92,8 +131,6 @@ footer ul li {
   /* ----- Play Your Cards Right Game ----- */
 
 .cards main {
-    display: inline-block;
-    height: 80vh;
     width: 100vw;
 }
 

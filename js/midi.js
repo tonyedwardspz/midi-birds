@@ -57,31 +57,35 @@ class MIDI {
     }
 
     onMIDIMessage (message) {
-        // [on/off, key, velocity]
-        // keys = [145/129, 48-72, 0-127] 
-        // pads = [144/128, 0-39, 127]
-        // dials = [176, 48-59, 0-127]
-        console.log(message.data);
+        // [on/off, key, velocity] | keys = [145/129, 48-72, 0-127] 
+        // pads = [144/128, 0-39, 127] | dials = [176, 48-59, 0-127]
+        let state = message.data[0];
+        let key = message.data[1];
+        let velocity = message.data[2];
 
-        if (app.isIndex){
-            if ((message.data[1] === 48) && message.data[0] === 145){ // Keyboard/On
-                let currentBird = Bird.findByID(message.data[1]);
+        if ((key >= 48 && key <= 72) && state === 145 && app.isIndex){ // Keyboard/On
+            let currentBird = Bird.findByID(message.data[1]);
 
-                console.log(currentBird.sing());
-                app.songs[message.data[1]] = new Audio(currentBird.sing());
-                app.songs[message.data[1]].play();
+            console.log(currentBird.sing());
+            app.songs[message.data[1]] = new Audio(currentBird.sing());
+            app.songs[message.data[1]].play();
 
-                app.birdImageContainer = document.getElementById('bird-image-container');
-                let birdImage = new Image(600, 400);
-                birdImage.src = `${currentBird.getImage()}`;
-                app.birdImageContainer.appendChild(birdImage);
-    
-            } else if ((message.data[1] === 48) && message.data[0]){ // Keyboard/Off
-                console.log('MIDI: stopping singing');
-                app.songs[message.data[1]].pause();
-            }
-        } else {
-            app.game.processKeyPress(message.data[0], message.data[1], message.data[2]);
+            let container = document.getElementById('bird-image-container');
+            let birdImage = new Image();
+            birdImage.src = `${currentBird.getImage()}`;
+            container.innerHTML = "";
+            container.appendChild(birdImage);
+
+            document.getElementById('bird-name').innerHTML = currentBird.commonName;
+            document.getElementById('sightings').innerHTML = 'Sightings: ' + currentBird.sightings;
+            document.getElementById('image-credit').innerHTML = 'Image Credit: ' + currentBird.imageCredit;
+            document.getElementById('audio-credit').innerHTML = 'Audio Credit: ' + currentBird.songCredit;
+
+        } else if ((message.data[1] === 48) && message.data[0] && app.isIndex){ // Keyboard/Off
+            console.log('MIDI: stopping singing');
+            app.songs[message.data[1]].pause();
+        } else if (app.isGame){
+            app.game.processKeyPress(state, key, velocity);
         }
     }
 

@@ -165,7 +165,7 @@
     {
         "id": 66,
         "commonName": "Chaffinch",
-        "image": "./image/chaffinch.jpg",
+        "image": "./images/chaffinch.jpg",
         "imageCredit": "Sophie Rogers",
         "song": "./audio/song.mp3",
         "songCredit": "url",

@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="demo">
     <header>
         <h1>Pick a bird. Any Bird</h1>
         <nav>
@@ -25,7 +25,18 @@
         <button>I do nothing</button>
     </header>
 
-    <div id="bird-image-container"></div>
+    <main>
+        <div id="bird-data">
+            <h2 id="bird-name"></h2>
+            <h3 id="sightings"></h3>
+            <p id="image-credit"></p>
+            <p id="audio-credit"></p>
+        </div>
+        
+
+        <div id="bird-image-container"></div>
+
+    </main>   
  
     <script src="js/bird.js"></script>
     <script src="js/midi.js"></script>
