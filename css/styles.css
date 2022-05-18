@@ -3,12 +3,14 @@
 header {
     display: block;
     height: 10vh;
-    width: 100vw;
+    width: 95vw;
+    margin: 0 auto;
 }
 
 header h1 {
     float: right;
-    margin-right: 6px;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 footer {
@@ -89,11 +91,6 @@ footer ul li {
 
   /* ----- Play Your Cards Right Game ----- */
 
-.cards h1{
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
 .cards main {
     display: inline-block;
     height: 80vh;
@@ -124,8 +121,6 @@ footer ul li {
     padding-bottom: 9px;
     padding-left: 4px;
 }
-
-
 
 .cards .card-holder {
     display: inline-block;
