@@ -207,15 +207,6 @@ class PlayCardsGame extends Game {
         }
     }
 
-    updateTeam(team){
-        console.log('GAME: Team ' + team + ' selected');
-
-        this.currentTeam = team;
-        let otherTeam = team === 1? 2 : 1;
-        document.getElementById('team-' + team).classList.add('active');
-        document.getElementById('team-' + otherTeam).classList.remove('active');
-    }
-
     setupLights(init){
         if (init) {
             let lights = [];

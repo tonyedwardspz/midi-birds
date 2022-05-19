@@ -38,17 +38,6 @@ img {
     height: auto;
 }
 
-.blink {
-    animation: blinker 1s infinite;
-    text-decoration: underline;
-}
-  
-@keyframes blinker {
-    from { opacity: 1.0; }
-    50% { opacity: 0.5; }
-    to { opacity: 1.0; }
-}
-
 
 /* ----- Demo 1 ----- */
 
@@ -83,6 +72,10 @@ img {
 
 /* ----- Flock Fortunes Game ----- */
 
+.fortunes .wrapper {
+    text-align: center;
+}
+
 /* Team scores on the left and right of the game board */
 
 .fortunes aside{
@@ -107,12 +100,36 @@ img {
     padding-top: 10vh;
 }
 
+.fortunes #team-1 {
+    padding-bottom: 12px;
+    padding-left: 7px;
+}
+
+.fortunes #team-2 {
+    padding-bottom: 12px;
+    padding-right: 7px;
+}
+
+.fortunes #team-1.active {
+    border-bottom: 3px solid red;
+    border-left: 3px solid red;
+    padding-bottom: 9px;
+    padding-left: 4px;
+}
+
+.fortunes #team-2.active {
+    border-bottom: 3px solid blue;
+    border-right: 3px solid blue;
+    padding-bottom: 9px;
+    padding-right: 4px;
+}
+
 
 /* The main game board which will show the answers by the end of the game */
 
 .fortunes main {
     vertical-align: top;
-    width: 60vw;
+    width: 55vw;
     text-align: center;
 }
 
