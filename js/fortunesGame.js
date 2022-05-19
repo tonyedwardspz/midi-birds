@@ -52,18 +52,18 @@ class FortunesGame extends Game {
             console.log('GAME: Pad press received');
             this.lastPad = key;
             
-            if (this.teamOneBirdButtons.includes(key)){
+            if (this.teamOneBirdButtons.includes(key) && this.currentTeam === 1){
                 this.checkAnswer(this.teamOneBirdButtons.indexOf(key), 1)
                 this.showAnswer(this.teamOneBirdButtons.indexOf(key));  
-            } else if (this.teamTwoBirdButtons.includes(key)){
+            } else if (this.teamTwoBirdButtons.includes(key) && this.currentTeam === 2){
                 this.checkAnswer(this.teamTwoBirdButtons.indexOf(key), 2)
                 this.showAnswer(this.teamTwoBirdButtons.indexOf(key));
             }
 
-            if (key === this.teamOneWrongButton) {
+            if (key === this.teamOneWrongButton && this.currentTeam === 1) {
                 this.wrongGuess(1);
                 this.updateTeam(2);
-            } else if (key === this.teamTwoWrongButton) {
+            } else if (key === this.teamTwoWrongButton && this.currentTeam === 2) {
                 this.wrongGuess(2)
                 this.updateTeam(1);
             }
