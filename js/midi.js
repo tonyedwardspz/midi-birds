@@ -68,7 +68,7 @@ class MIDI {
         let key = message.data[1];
         let velocity = message.data[2];
 
-        if ((key >= 48 && key <= 72) && state === 145 && app.isIndex){ // Keyboard/On
+        if ((key >= 48 && key <= 72) && state === 145 && app.isGame === false){ // Keyboard/On
             let currentBird = Bird.findByID(message.data[1]);
 
             console.log(currentBird.sing());

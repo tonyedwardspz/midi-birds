@@ -2,10 +2,9 @@ let app = {
     midi: {},
     songs: {},
     status: {},
+    answers:{},
 
-    isGame: true,
-
-    answers:{}
+    isGame: true
 };
 
 Bird.catchBirds().then(() => {

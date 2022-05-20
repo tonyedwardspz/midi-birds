@@ -2,11 +2,7 @@
 
 class Game {
     constructor(){
-        this.setupStatus();
-    }
-
-    setupStatus(){
-        console.log('setting up status');
+        
     }
 
     updateTeam(team){

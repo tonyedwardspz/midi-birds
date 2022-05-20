@@ -1,6 +1,6 @@
 let app = {
     songs: {},
-    isIndex: true
+    isGame: false
 };
 
 Bird.catchBirds().then(() => {

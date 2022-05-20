@@ -163,12 +163,12 @@ class FortunesGame extends Game {
     gameOver(type){
         if (type === 'complete'){
             if (this.scores[0] > this.scores[1]){
-                alert('Team 1 won with a score of ' + this.scores[0]);
+                alert('Congratulations\n\nTeam 1 won with a score of ' + this.scores[0]);
             } else {
-                alert('Team 2 won with a score of ' + this.scores[1]);
+                alert('Congratulations\n\nTeam 2 won with a score of ' + this.scores[1]);
             }
         } else if ('maxGuesses'){
-            alert('GAME OVER n/ Team ' + this.currentTeam + ' looses :(');
+            alert('GAME OVER \n\nTeam ' + this.currentTeam + ' looses :(');
         }
     }
 }
