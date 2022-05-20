@@ -21,6 +21,8 @@ let output;
 class MIDI {
     constructor(){
         this.outputs = {};
+        this.controllerConnected = false;
+        
         if (navigator.requestMIDIAccess) {
             navigator.requestMIDIAccess()
                 .then(midi => {
@@ -30,23 +32,26 @@ class MIDI {
     }
 
     success (midi) {
-        if (app.isGame){
-            Game.setStatus('midi', true);
-        }
-
         this.inputs = midi.inputs.values();
 
         for (let input = this.inputs.next();
             input && !input.done;
             input = this.inputs.next()) { 
-            input.value.onmidimessage = this.onMIDIMessage;
+                console.log('MIDI: The controller model is ' + input.value.name);
+                input.value.onmidimessage = this.onMIDIMessage;
+                this.controllerConnected = true;
         }
 
         this.outputs = midi.outputs.values();
         if (this.keypadLightsOff() && app.isGame === true) {
             app.game.setupLights(true);
         }
-        
+
+        if (this.controllerConnected && app.isGame){
+            Game.setStatus('midi', true);
+        } else if (app.isGame) {
+            Game.setStatus('midi', false);
+        }
     }
 
     failure () {
@@ -99,9 +104,14 @@ class MIDI {
                     commands.push(0x90, value, OFF)
                 })
             })
-            output.send(commands);
+            try {
+                output.send(commands);  
+                return true;
+            } catch (e){
+                console.error("ERROR MIDI: You forgot to plug in the midi controller");
+                return false;
+            }
         }
-        return true;
     }
 
     switchOnLights(lights){
@@ -111,6 +121,13 @@ class MIDI {
         lights.forEach(light => {
             commands.push( 0x90, light[0], light[1] )
         });
-        output.send(commands);   
+
+        try {
+            output.send(commands);
+            return true;
+        } catch (e){
+            console.log("ERROR: You forgot to plug in the midi controller");
+            return false;
+        }
     }
 }
