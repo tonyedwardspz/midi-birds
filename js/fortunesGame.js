@@ -77,9 +77,8 @@ class FortunesGame extends Game {
         for (let i = 0; i < 6; i++) {
             app.answers[i] = sortedBirds[i];
         }
-        
-        console.log(app.answers);
         Game.setStatus('game', true);
+        console.log('GAME: Answers calculated')
     }
 
     checkAnswer(guess, team) {
