@@ -2,7 +2,6 @@
     {
         "id": 48,
         "commonName": "Robin",
-        "latinName": "Birdicus Maximus",
         "image": "./images/robin.jpg",
         "imageCredit": "Tony Edwards",
         "song": "./audio/birdsong/robin.mp3",

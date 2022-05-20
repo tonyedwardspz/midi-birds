@@ -1,11 +1,10 @@
 "use strict"
 
 class Bird {
-    constructor(id, commonName, latinName, image, imageCredit,
+    constructor(id, commonName, image, imageCredit,
         song, songCredit, sightings) {
         this.id = id;
         this.commonName = commonName;
-        this.latinName = latinName;
         this.image = image;
         this.imageCredit = imageCredit;
         this.song = song;
@@ -54,7 +53,7 @@ class Bird {
         const flock = [];
     
         json.forEach(bird => {
-            flock.push(new Bird(bird.id, bird.commonName, bird.latinName, bird.image, bird.imageCredit,
+            flock.push(new Bird(bird.id, bird.commonName, bird.image, bird.imageCredit,
                 bird.song, bird.songCredit, bird.sightings ));
         });
     
