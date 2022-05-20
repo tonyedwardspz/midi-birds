@@ -9,4 +9,5 @@ Bird.catchBirds().then(() => {
     Bird.find('Robin');
 
     app.midi = new MIDI();
+    app.audience = new Audience(3);
 });

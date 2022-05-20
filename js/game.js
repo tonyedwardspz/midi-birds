@@ -19,7 +19,7 @@ class Game {
     }
 
     static setStatus(type, state) {
-        console.log(type + ' status: ', state);
+        console.log(type.toUpperCase() + ': Status ', state);
         app.status[type] = state;
 
         document.getElementById('status-' + type).innerHTML = state ? ' :) ' : ' :( ';
