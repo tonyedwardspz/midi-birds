@@ -151,10 +151,11 @@ class PlayCardsGame extends Game {
         this.hasSelected = false;
         
         if (this.round[team - 1] > 0) {
-            let el = document.getElementById('team-' + team + '-card-' + (this.round[team - 1] - 1));
-            console.log(el);
-            el.innerHTML = "";
-            this.round[team - 1]--;
+            setTimeout(() => {
+                let el = document.getElementById('team-' + team + '-card-' + (this.round[team - 1] - 1));
+                el.innerHTML = "";
+                this.round[team - 1]--;
+            }, "3000");
 
             if (team === 1){
                 this.teamOneBirds.pop();
@@ -171,7 +172,7 @@ class PlayCardsGame extends Game {
 
         console.log('GAME: Round, current & last team', [this.round, this.currentTeam, team]);
         if (this.round[this.currentTeam -1] === 1){
-            console.log('calling starter bird');
+            console.log('GAME: Calling starter bird');
             this.starterBird();
         }
         
