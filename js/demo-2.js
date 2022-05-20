@@ -11,6 +11,6 @@ Bird.catchBirds().then(() => {
     
     app.game = new PlayCardsGame();
     app.midi = new MIDI();
-    app.audience = new Audience(7, 25);
+    app.audience = new Audience(7, 25, false);
     app.audience.participationMultiplier(4);
 });

@@ -1,10 +1,10 @@
 "use strict"
 
 class Audience {
-    constructor(level, numberOfPeople){
+    constructor(level, numberOfPeople, sfx){
         this.participation = level;
         this.size = numberOfPeople;
-        this.noSFX = false;
+        this.sfx = sfx;
     }
 
     get participation(){
@@ -12,7 +12,7 @@ class Audience {
     }
 
     set participation(level){
-        if (!this.noSFX){
+        if (this.sfx){
             console.log('AUDIENCE: Participation level is currently ' + level + ' out of 10.');
         }
         this._participation = level
@@ -28,8 +28,6 @@ class Audience {
     }
 
     participationMultiplier(factor){
-        this.noSFX = true;
-
         let n = (this.participation * this.size) * factor;
  
         for(let i = 0; i < n; i++){

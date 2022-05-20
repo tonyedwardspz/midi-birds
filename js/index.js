@@ -4,10 +4,7 @@ let app = {
 };
 
 Bird.catchBirds().then(() => {
-    console.log('Flock ready');
-
-    Bird.find('Robin');
 
     app.midi = new MIDI();
-    app.audience = new Audience(3, 25);
+    app.audience = new Audience(3, 25, true);
 });
