@@ -5,7 +5,7 @@
         "image": "./images/robin.jpg",
         "imageCredit": "Tony Edwards",
         "song": "./audio/birdsong/robin.mp3",
-        "songCredit": "https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/robin/",
+        "songCredit": "RSPB",
         "sightings": 29
     },
     {
@@ -13,8 +13,8 @@
         "commonName": "Gray Heron",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/gray-heron.mp3",
+        "songCredit": "Tony",
         "sightings": 1
     },
     {
@@ -22,8 +22,8 @@
         "commonName": "Jackdaw",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/jackdaw.mp3",
+        "songCredit": "Tony",
         "sightings": 9
     },
     {
@@ -31,8 +31,8 @@
         "commonName": "Blackbird",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/blackbird.mp3",
+        "songCredit": "Tony",
         "sightings": 4
     },
     {
@@ -49,8 +49,8 @@
         "commonName": "House Sparrow",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/house-sparrow.mp3",
+        "songCredit": "Tony",
         "sightings": 34
     },
     {
@@ -58,17 +58,17 @@
         "commonName": "Great Tit",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/great-tit.mp3",
+        "songCredit": "Tony",
         "sightings": 14
     },
     {
         "id": 55,
         "commonName": "Herring Gull",
         "image": "images/herringgull.jpg",
-        "imageCredit": "Tony Edwards",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "imageCredit": "Tony",
+        "song": "./audio/birdsong/herring-gull.mp3",
+        "songCredit": "Tony",
         "sightings": 13
     },
     {
@@ -76,8 +76,8 @@
         "commonName": "Raven",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/raven.mp3",
+        "songCredit": "Tony",
         "sightings": 3
     },
     {
@@ -94,8 +94,8 @@
         "commonName": "Wren",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/wren.mp3",
+        "songCredit": "Tony",
         "sightings": 2
     },
     {
@@ -103,8 +103,8 @@
         "commonName": "Tawny Owl",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/tawny-owl.mp3",
+        "songCredit": "Tony",
         "sightings": 3
     },
     {
@@ -148,8 +148,8 @@
         "commonName": "Long Tailed Tit",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/long-tailed-tit.mp3",
+        "songCredit": "Tony",
         "sightings": 15
     },
     {
@@ -166,8 +166,8 @@
         "commonName": "Chaffinch",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "URL",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/chaffinch.mp3",
+        "songCredit": "Tony",
         "sightings": 22
     },
     {
@@ -175,8 +175,8 @@
         "commonName": "Blue Tit",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/blue-tit.mp3",
+        "songCredit": "Tony",
         "sightings": 6
     },
     {
@@ -202,8 +202,8 @@
         "commonName": "Ruddy Turnstone",
         "image": "images/ruddyturnstone.jpg",
         "imageCredit": "Tony Edwards",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/ruddy-turnstone.mp3",
+        "songCredit": "Tony",
         "sightings": 1
     },
     {
@@ -211,8 +211,8 @@
         "commonName": "Dunnock",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/dunnock.mp3",
+        "songCredit": "Tony",
         "sightings": 13
     },
     {
@@ -220,8 +220,8 @@
         "commonName": "Goldfinch",
         "image": "https://placeimg.com/500/500/animals/grayscale",
         "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/goldfinch.mp3",
+        "songCredit": "Tony",
         "sightings": 10
     }
 ]
