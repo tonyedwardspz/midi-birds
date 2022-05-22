@@ -5,6 +5,10 @@ class Audience {
         this.participation = level;
         this.size = numberOfPeople;
         this.sfx = sfx;
+
+        if (level > 7) {
+            this.teams = true
+        }
     }
 
     get participation(){
