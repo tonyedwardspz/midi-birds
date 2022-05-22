@@ -11,8 +11,8 @@
     {
         "id": 49,
         "commonName": "Gray Heron",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/gray-heron.jpg",
+        "imageCredit": "Sophie",
         "song": "./audio/birdsong/gray-heron.mp3",
         "songCredit": "Tony",
         "sightings": 1
@@ -20,8 +20,8 @@
     {
         "id": 50,
         "commonName": "Jackdaw",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/jackdaw.jpg",
+        "imageCredit": "Sophie",
         "song": "./audio/birdsong/jackdaw.mp3",
         "songCredit": "Tony",
         "sightings": 9
@@ -38,8 +38,8 @@
     {
         "id": 52,
         "commonName": "Wood Pigeon",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/wood-pideon.jpg",
+        "imageCredit": "Sophie",
         "song": "./audio/birdsong/placeholder.wav",
         "songCredit": "url",
         "sightings": 9
