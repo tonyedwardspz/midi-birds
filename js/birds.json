@@ -21,7 +21,7 @@
         "id": 50,
         "commonName": "Jackdaw",
         "image": "./images/jackdaw.jpg",
-        "imageCredit": "Sophie",
+        "imageCredit": " Hedera Baltica",
         "song": "./audio/birdsong/jackdaw.mp3",
         "songCredit": "Tony",
         "sightings": 9
@@ -29,8 +29,8 @@
     {
         "id": 51,
         "commonName": "Blackbird",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/blackbird.jpg",
+        "imageCredit": "Manx John",
         "song": "./audio/birdsong/blackbird.mp3",
         "songCredit": "Tony",
         "sightings": 4
@@ -38,17 +38,17 @@
     {
         "id": 52,
         "commonName": "Wood Pigeon",
-        "image": "./images/wood-pideon.jpg",
+        "image": "./images/wood-pigeon.jpg",
         "imageCredit": "Sophie",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "song": "./audio/birdsong/wood-pigeon.mp3",
+        "songCredit": "RSPB",
         "sightings": 9
     },
     {
         "id": 53,
         "commonName": "House Sparrow",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/house-sparrow.jpg",
+        "imageCredit": "Lip Kee",
         "song": "./audio/birdsong/house-sparrow.mp3",
         "songCredit": "Tony",
         "sightings": 34
@@ -56,8 +56,8 @@
     {
         "id": 54,
         "commonName": "Great Tit",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/great-tit.jpg",
+        "imageCredit": "Sergey Yeliseev",
         "song": "./audio/birdsong/great-tit.mp3",
         "songCredit": "Tony",
         "sightings": 14
@@ -65,7 +65,7 @@
     {
         "id": 55,
         "commonName": "Herring Gull",
-        "image": "images/herringgull.jpg",
+        "image": "images/herring-gull.jpg",
         "imageCredit": "Tony",
         "song": "./audio/birdsong/herring-gull.mp3",
         "songCredit": "Tony",
@@ -74,8 +74,8 @@
     {
         "id": 56,
         "commonName": "Raven",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/raven.jpg",
+        "imageCredit": "Martin Pilát",
         "song": "./audio/birdsong/raven.mp3",
         "songCredit": "Tony",
         "sightings": 3
@@ -83,17 +83,17 @@
     {
         "id": 57,
         "commonName": "Collared Dove",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "image": "./images/collared-dove.jpg",
+        "imageCredit": "Peter O'Connor",
+        "song": "./audio/birdsong/collared-dove.mp3",
+        "songCredit": "RSPB",
         "sightings": 7
     },
     {
         "id": 58,
         "commonName": "Wren",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/wren.jpg",
+        "imageCredit": "Koshyk",
         "song": "./audio/birdsong/wren.mp3",
         "songCredit": "Tony",
         "sightings": 2
@@ -101,8 +101,8 @@
     {
         "id": 59,
         "commonName": "Tawny Owl",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/tawny-owl.jpg",
+        "imageCredit": "Sue Crow",
         "song": "./audio/birdsong/tawny-owl.mp3",
         "songCredit": "Tony",
         "sightings": 3
@@ -110,44 +110,44 @@
     {
         "id": 60,
         "commonName": "Buzzard",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "image": "./images/buzzard.jpg",
+        "imageCredit": "Ferran Pestaña",
+        "song": "./audio/birdsong/buzzard.mp3",
+        "songCredit": "RSPB",
         "sightings": 4
     },
     {
         "id": 61,
         "commonName": "Firecrest",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/firecrest.jpg",
+        "imageCredit": "Mike Prince",
         "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "songCredit": "It's Tony!",
         "sightings": 2
     },
     {
         "id": 62,
         "commonName": "Starling",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "image": "./images/starling.jpg",
+        "imageCredit": "Bernard Spragg",
+        "song": "./audio/birdsong/starling.mp3",
+        "songCredit": "RSPB",
         "sightings": 1
     },
     {
         "id": 63,
         "commonName": "Rook",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "image": "./images/rook.jpg",
+        "imageCredit": "foxypar4",
+        "song": "./audio/birdsong/rook.mp3",
+        "songCredit": "RSPB",
         "sightings": 8
     },
     {
         "id": 64,
         "commonName": "Long Tailed Tit",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/long-tailed-tit.jpg",
+        "imageCredit": "Sergey Yeliseev",
         "song": "./audio/birdsong/long-tailed-tit.mp3",
         "songCredit": "Tony",
         "sightings": 15
@@ -155,17 +155,17 @@
     {
         "id": 65,
         "commonName": "Loon",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/loon.jpg",
+        "imageCredit": "Keith Carver",
         "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "songCredit": "It's Tony!",
         "sightings": 2
     },
     {
         "id": 66,
         "commonName": "Chaffinch",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "URL",
+        "image": "./images/chaffinch.jpg",
+        "imageCredit": "foxypar4",
         "song": "./audio/birdsong/chaffinch.mp3",
         "songCredit": "Tony",
         "sightings": 22
@@ -173,8 +173,8 @@
     {
         "id": 67,
         "commonName": "Blue Tit",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/blue-tit.jpg",
+        "imageCredit": "Keith Ellwood",
         "song": "./audio/birdsong/blue-tit.mp3",
         "songCredit": "Tony",
         "sightings": 6
@@ -182,25 +182,25 @@
     {
         "id": 68,
         "commonName": "Spotted Flycatcher",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/spotted-flycatcher.jpg",
+        "imageCredit": "Imran Shah",
         "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "songCredit": "It's Tony!",
         "sightings": 1
     },
     {
         "id": 69,
         "commonName": "Coal Tit",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
-        "song": "./audio/birdsong/placeholder.wav",
-        "songCredit": "url",
+        "image": "./images/coal-tit.jpg",
+        "imageCredit": "Andy Morffew",
+        "song": "./audio/birdsong/coal-tit.mp3",
+        "songCredit": "RSPB",
         "sightings": 1
     },
     {
         "id": 70,
         "commonName": "Ruddy Turnstone",
-        "image": "images/ruddyturnstone.jpg",
+        "image": "images/ruddy-turnstone.jpg",
         "imageCredit": "Tony Edwards",
         "song": "./audio/birdsong/ruddy-turnstone.mp3",
         "songCredit": "Tony",
@@ -209,8 +209,8 @@
     {
         "id": 71,
         "commonName": "Dunnock",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/dunnock.jpg",
+        "imageCredit": "Steve Higgins",
         "song": "./audio/birdsong/dunnock.mp3",
         "songCredit": "Tony",
         "sightings": 13
@@ -218,8 +218,8 @@
     {
         "id": 72,
         "commonName": "Goldfinch",
-        "image": "https://placeimg.com/500/500/animals/grayscale",
-        "imageCredit": "url",
+        "image": "./images/goldfinch.jpg",
+        "imageCredit": "Kev Chapman",
         "song": "./audio/birdsong/goldfinch.mp3",
         "songCredit": "Tony",
         "sightings": 10
