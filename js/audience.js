@@ -9,6 +9,8 @@ class Audience {
         if (level > 7) {
             this.teams = true
         }
+
+        this.statusIndicatorUpdate(level);
     }
 
     get participation(){
@@ -29,6 +31,11 @@ class Audience {
     set size(numberOfPeople){
         console.log('AUDIENCE: Size is estimated at ' + numberOfPeople);
         this._size = numberOfPeople
+    }
+
+    statusIndicatorUpdate(participationLevel){
+        let el = document.getElementById('participation-level');
+        el.innerHTML = participationLevel;
     }
 
     participationMultiplier(factor){

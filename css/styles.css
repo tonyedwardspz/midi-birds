@@ -10,7 +10,33 @@ header {
 header h1 {
     float: right;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+nav ul {
+    padding-left: 0;
+    margin: 5px 0;
+}
+
+nav li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+header p {
+    text-align: right;
+    margin: 0;
+    margin-top: -8px;
+}
+
+main {
+    display: inline-block;
+    height: 80vh;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 footer {
@@ -26,16 +52,6 @@ footer ul {
 footer ul li {
     display: inline-block;
     min-width: 15vw;
-}
-
-main {
-    display: inline-block;
-    height: 80vh;
-}
-
-img {
-    width: 100%;
-    height: auto;
 }
 
 
