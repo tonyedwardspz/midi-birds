@@ -13,7 +13,6 @@ class Audience {
             this.team2Name = "";
             this.team2Score = 0;
         }
-
         this.statusIndicatorUpdate(level);
     }
 
@@ -40,8 +39,8 @@ class Audience {
     setupTeamNames(){
         if (app.gameID === 1){
             if(prompt('New teams?') === ''){
-                this.team1Name = prompt("Team 1's chosen name?");
-                this.team2Name = prompt("Team 2's chosen name?");
+                this.team1Name = prompt("Team 1's chosen name?", 'Team 1');
+                this.team2Name = prompt("Team 2's chosen name?", 'Team 2');
 
                 DataStore.saveLocally('team1Name', this.team1Name);
                 DataStore.saveLocally('team2Name', this.team2Name);
@@ -63,6 +62,22 @@ class Audience {
     getTeamName(teamNumber) {
         return teamNumber === 1 ? this.team1Name : this.team2Name;
     }
+
+    updateTeamScores(team1Score, team2Score){
+        this.team1Score += team1Score;
+        this.team2Score += team2Score;
+
+        DataStore.saveLocally('team1Score', this.team1Score);
+        DataStore.saveLocally('team2Score', this.team2Score);        
+    }
+
+    getTotalTeamScore(teamNumber) {
+        return teamNumber === 1 ? this.team1Score : this.team2Score;
+    }
+
+    loadScores(){
+        this.team1Score = DataStore.loadLocally('team1Score');
+        this.team2Score = DataStore.loadLocally('team2Score');
     }
 
     statusIndicatorUpdate(participationLevel){
