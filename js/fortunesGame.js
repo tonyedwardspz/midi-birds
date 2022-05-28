@@ -170,5 +170,6 @@ class FortunesGame extends Game {
         } else if ('maxGuesses'){
             alert('GAME OVER \n\nTeam ' + this.currentTeam + ' looses :(');
         }
+        app.audience.updateTeamScores(this.scores[0], this.scores[1]);
     }
 }

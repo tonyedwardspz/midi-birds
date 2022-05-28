@@ -11,6 +11,7 @@ class PlayCardsGame extends Game {
         this.currentBird = {};
         this.allBirdIDs = [];
         this.hasSelected = false;
+        this.scores = [0,0];
 
         this.teamOneBirds = [];
         this.teamTwoBirds = [];
@@ -105,10 +106,10 @@ class PlayCardsGame extends Game {
         console.log('GAME: Comparing ' + this.currentBird.commonName + ' with ' + lastBird.commonName, [this.currentBird.sightings, lastBird.sightings]);
         let answer = this.currentBird.sightings > lastBird.sightings;
         
-        if (answer === this.higherLower){
-            // correct
+        if (answer === this.higherLower){ // Correct
+            this.updateScore(this.currentTeam, 10);
         } else if(this.currentBird.sightings === lastBird.sightings){
-            alert('Nothing for a pair');
+            alert('Nothing for a pair. Not in this game.');
             this.changeTeam(this.currentTeam);
         } else {
             alert('Wrong');
@@ -116,8 +117,15 @@ class PlayCardsGame extends Game {
         }
 
         if (birds.length === 5){
-            alert('Winner Winner Chicken Dinner');
+            alert('Winner Winner. Chicken Dinner');
+            app.audience.updateTeamScores(this.scores[0], this.scores[1]);
         }
+    }
+
+    updateScore(team, score){
+        this.scores[team - 1] += score;
+
+        console.table('GAME: Scores: ', this.scores);
     }
 
     showAnswer(){

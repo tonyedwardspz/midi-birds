@@ -3,14 +3,14 @@ let app = {
     songs: {},
     status: {},
 
-    isGame: true
+    isGame: true,
+    gameID: 2
 };
 
 Bird.catchBirds().then(() => {
-    console.log('Flock ready');
-    
     app.game = new PlayCardsGame();
     app.midi = new MIDI();
     app.audience = new Audience(7, 25, false);
+    app.audience.setupTeamNames();
     app.audience.participationMultiplier(4);
 });

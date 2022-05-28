@@ -147,6 +147,7 @@ footer ul li {
     vertical-align: top;
     width: 55vw;
     text-align: center;
+    font-size: larger;
 }
 
 .fortunes #game-board {
@@ -178,6 +179,14 @@ footer ul li {
     margin-left: 2.5vw;
 }
 
+.cards .team-name {
+    display: inline-block;
+    width: 3vw;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: large;
+}
+
 .cards #team-1.active {
     border-bottom: 3px solid red;
     border-left: 3px solid red;
@@ -194,7 +203,7 @@ footer ul li {
 
 .cards .card-holder {
     display: inline-block;
-    width: 19%;
+    width: 18%;
     height: 100%;
     vertical-align: top;
     border: 1px solid red;
