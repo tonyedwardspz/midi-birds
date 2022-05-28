@@ -3,15 +3,17 @@
 class Game {
     constructor(){
         document.getElementById('reveal').addEventListener('click', (e) => {
-            console.log('button clicked');
+            console.log('GAME: Reveal Game board');
             let el = document.getElementById('splash-screen');
             el.classList.add('hidden');
-        })
-        
-    }
+        });
 
-    showGameBoard(){
-
+        if(app.gameID === 1){
+            document.getElementById('new-teams').addEventListener('click', (e) => {
+                console.log('GAME: Setup teams clicked');
+                app.audience.setupTeamNames();
+            });
+        }
     }
 
     updateTeam(team){
@@ -25,8 +27,8 @@ class Game {
 
     static setStatus(type, state) {
         console.log(type.toUpperCase() + ': Status ', state);
+        
         app.status[type] = state;
-
         document.getElementById('status-' + type).innerHTML = state ? ' :) ' : ' :( ';
     }
 }

@@ -61,18 +61,23 @@ footer ul li {
 .splash {
     position: absolute;
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     background-color: white;
     top: 10vh;
     text-align: center;
 }
 
 .splash button{
-    margin-top: 30vh;
+   margin-top: 1em;
 }
 
 .hidden {
     display: none;
+}
+
+.button-container{
+    width: 20vw;
+    margin: 30vh auto 0 auto;
 }
 
 
@@ -202,7 +207,7 @@ footer ul li {
 
 .cards .team-name {
     display: inline-block;
-    width: 3vw;
+    width: 0vw;
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: large;
@@ -229,6 +234,11 @@ footer ul li {
     vertical-align: top;
     border: 1px solid red;
 }
+
+.cards #team-2 .card-holder {
+    border: 1px solid blue;
+}
+
 
 .cards .card-holder img {
     display: block;
