@@ -118,6 +118,7 @@ class PlayCardsGame extends Game {
 
         if (birds.length === 5){
             alert('Winner Winner. Chicken Dinner');
+            app.audience.updateTeamScores(this.scores[0], this.scores[1]);
         }
     }
 
@@ -125,7 +126,6 @@ class PlayCardsGame extends Game {
         this.scores[team - 1] += score;
 
         console.table('GAME: Scores: ', this.scores);
-        app.audience.updateTeamScore(this.scores[0], this.scores[1]);
     }
 
     showAnswer(){

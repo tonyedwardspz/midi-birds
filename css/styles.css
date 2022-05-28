@@ -147,6 +147,7 @@ footer ul li {
     vertical-align: top;
     width: 55vw;
     text-align: center;
+    font-size: larger;
 }
 
 .fortunes #game-board {

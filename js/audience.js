@@ -66,16 +66,18 @@ class Audience {
     }
 
     updateTeamScores(team1Score, team2Score){
-        this.team1Score += team1Score;
-        this.team2Score += team2Score;
+        this.team1Score = parseInt(this.team1Score) + team1Score;
+        this.team2Score = parseInt(this.team2Score) + team2Score;
 
         DataStore.saveLocally('team1Score', this.team1Score);
         DataStore.saveLocally('team2Score', this.team2Score);        
     }
 
     resetTeamScores(){
-        DataStore.saveLocally('team1Score', 0);
-        DataStore.saveLocally('team2Score', 0);    
+        DataStore.saveLocally('team1Score', '0');
+        DataStore.saveLocally('team2Score', '0');
+        this.team1Score = 0;
+        this.team2Score = 0;    
     }
 
     getTotalTeamScore(teamNumber) {

@@ -144,8 +144,6 @@ class FortunesGame extends Game {
         console.table('GAME: Scores: ', this.scores);
         let container = document.getElementById('team-' + team + '-score');
         container.innerHTML = this.scores[team - 1];
-
-        app.audience.updateTeamScore(this.scores[0], this.scores[1]);
     }
 
     wrongGuess(team){
@@ -172,5 +170,6 @@ class FortunesGame extends Game {
         } else if ('maxGuesses'){
             alert('GAME OVER \n\nTeam ' + this.currentTeam + ' looses :(');
         }
+        app.audience.updateTeamScores(this.scores[0], this.scores[1]);
     }
 }
