@@ -45,12 +45,14 @@ class Audience {
                 DataStore.saveLocally('team1Name', this.team1Name);
                 DataStore.saveLocally('team2Name', this.team2Name);
 
-                console.log('AUDIENCE: Saved team names');
+                this.resetTeamScores();
+
+                console.log('AUDIENCE: Saved new team names');
             }
         } else {
             this.team1Name = DataStore.loadLocally('team1Name');
             this.team2Name = DataStore.loadLocally('team2Name');
-            console.table('AUDIENCE: Loaded team names', [this.team1Name, this.team2Name]);
+            console.table('AUDIENCE: Loaded existing team names', [this.team1Name, this.team2Name]);
         }
 
         let el = document.getElementById('team-1-name')
@@ -69,6 +71,11 @@ class Audience {
 
         DataStore.saveLocally('team1Score', this.team1Score);
         DataStore.saveLocally('team2Score', this.team2Score);        
+    }
+
+    resetTeamScores(){
+        DataStore.saveLocally('team1Score', 0);
+        DataStore.saveLocally('team2Score', 0);    
     }
 
     getTotalTeamScore(teamNumber) {
