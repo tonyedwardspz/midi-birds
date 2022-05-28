@@ -38,19 +38,31 @@ class Audience {
     }
 
     setupTeamNames(){
-        if (prompt('New teams?') === ''){
-            this.team1Name = prompt("Team 1's chosen name?");
-            this.team2Name = prompt("Team 2's chosen name?");
+        if (app.gameID === 1){
+            if(prompt('New teams?') === ''){
+                this.team1Name = prompt("Team 1's chosen name?");
+                this.team2Name = prompt("Team 2's chosen name?");
 
-            DataStore.saveLocally('team1Name', this.team1Name);
-            DataStore.saveLocally('team2Name', this.team2Name);
+                DataStore.saveLocally('team1Name', this.team1Name);
+                DataStore.saveLocally('team2Name', this.team2Name);
 
-            console.log('AUDIENCE: Saved team names');
+                console.log('AUDIENCE: Saved team names');
+            }
         } else {
-            this.team1Name = DataStore.loadLocally('team1name');
-            this.team2Name = DataStore.loadLocally('team2name');
-            console.log('AUDIENCE: Loaded team names');
+            this.team1Name = DataStore.loadLocally('team1Name');
+            this.team2Name = DataStore.loadLocally('team2Name');
+            console.table('AUDIENCE: Loaded team names', [this.team1Name, this.team2Name]);
         }
+
+        let el = document.getElementById('team-1-name')
+        el.innerHTML = this.team1Name;
+        el = document.getElementById('team-2-name')
+        el.innerHTML = this.team2Name;
+    }
+
+    getTeamName(teamNumber) {
+        return teamNumber === 1 ? this.team1Name : this.team2Name;
+    }
     }
 
     statusIndicatorUpdate(participationLevel){

@@ -4,7 +4,8 @@ let app = {
     status: {},
     answers:{},
 
-    isGame: true
+    isGame: true,
+    gameID: 1
 };
 
 Bird.catchBirds().then(() => {
