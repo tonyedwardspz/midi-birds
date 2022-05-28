@@ -34,25 +34,26 @@ class Audience {
     }
 
     setupTeamNames(){
-        if (app.gameID === 1){
-            if(prompt('New teams?') === ''){
-                this.team1Name = prompt("Team 1's chosen name?", 'Team 1');
-                this.team2Name = prompt("Team 2's chosen name?", 'Team 2');
+        this.team1Name = prompt("Team 1's chosen name?", 'Team 1');
+        this.team2Name = prompt("Team 2's chosen name?", 'Team 2');
 
-                DataStore.saveLocally('team1Name', this.team1Name);
-                DataStore.saveLocally('team2Name', this.team2Name);
+        DataStore.saveLocally('team1Name', this.team1Name);
+        DataStore.saveLocally('team2Name', this.team2Name);
+        this.resetTeamScores();
+        this.updateTeamNames();
 
-                this.resetTeamScores();
+        console.log('AUDIENCE: Saved new team names');
+    }
 
-                console.log('AUDIENCE: Saved new team names');
-            }
-        } else {
-            this.team1Name = DataStore.loadLocally('team1Name');
-            this.team2Name = DataStore.loadLocally('team2Name');
-            console.table('AUDIENCE: Loaded existing team names', [this.team1Name, this.team2Name]);
-            this.loadScores();
-        }
+    loadTeams(){
+        this.team1Name = DataStore.loadLocally('team1Name');
+        this.team2Name = DataStore.loadLocally('team2Name');
+        console.table('AUDIENCE: Loaded existing team names', [this.team1Name, this.team2Name]);
+        this.loadScores();
+        this.updateTeamNames();
+    }
 
+    updateTeamNames(){
         let el = document.getElementById('team-1-name')
         el.innerHTML = this.team1Name;
         el = document.getElementById('team-2-name')
