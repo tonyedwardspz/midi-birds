@@ -53,6 +53,7 @@ class Audience {
             this.team1Name = DataStore.loadLocally('team1Name');
             this.team2Name = DataStore.loadLocally('team2Name');
             console.table('AUDIENCE: Loaded existing team names', [this.team1Name, this.team2Name]);
+            this.loadScores();
         }
 
         let el = document.getElementById('team-1-name')
@@ -85,6 +86,7 @@ class Audience {
     }
 
     loadScores(){
+        console.log('AUDIENCE: Loading Scores')
         this.team1Score = DataStore.loadLocally('team1Score');
         this.team2Score = DataStore.loadLocally('team2Score');
     }
