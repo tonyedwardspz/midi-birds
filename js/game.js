@@ -2,7 +2,16 @@
 
 class Game {
     constructor(){
+        document.getElementById('reveal').addEventListener('click', (e) => {
+            console.log('button clicked');
+            let el = document.getElementById('splash-screen');
+            el.classList.add('hidden');
+        })
         
+    }
+
+    showGameBoard(){
+
     }
 
     updateTeam(team){

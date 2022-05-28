@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="fortunes"> 
+<body class="game fortunes"> 
     <header>
         <h1>Flock Fortunes</h1>
         <nav>
@@ -22,7 +22,7 @@
                 <li><a href="demo-2.html">Demo 2</a></li>
             </ul>
         </nav>
-        <button>I do nothing</button>
+        
         <p>Participation Level: <span id="participation-level"></span>/10</p>
     </header>
 
@@ -67,6 +67,10 @@
             <li>Game <span id="status-game"></span></li>
         </ul>
     </footer>
+
+    <div id="splash-screen" class="splash">
+        <button id="reveal">Reveal Game Board</button>
+    </div>
  
     <script src="js/bird.js"></script>
     <script src="js/dataStore.js"></script>

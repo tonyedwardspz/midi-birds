@@ -29,6 +29,10 @@ header p {
     margin-top: -8px;
 }
 
+.game header p {
+    margin-top: 20px;
+}
+
 main {
     display: inline-block;
     height: 80vh;
@@ -52,6 +56,23 @@ footer ul {
 footer ul li {
     display: inline-block;
     min-width: 15vw;
+}
+
+.splash {
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+    background-color: white;
+    top: 10vh;
+    text-align: center;
+}
+
+.splash button{
+    margin-top: 30vh;
+}
+
+.hidden {
+    display: none;
 }
 
 
