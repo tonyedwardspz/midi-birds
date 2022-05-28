@@ -1,10 +1,9 @@
 "use strict"
 
 class Audience {
-    constructor(level, numberOfPeople, sfx){
+    constructor(level, numberOfPeople){
         this.participation = level;
         this.size = numberOfPeople;
-        this.sfx = sfx;
 
         if (level > 7) {
             this.teams = true
@@ -21,9 +20,7 @@ class Audience {
     }
 
     set participation(level){
-        if (this.sfx){
-            console.log('AUDIENCE: Participation level is currently ' + level + ' out of 10.');
-        }
+        console.log('AUDIENCE: Participation level has been set to ' + level + ' out of 10.');
         this._participation = level
     }
 
