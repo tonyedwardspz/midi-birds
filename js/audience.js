@@ -102,6 +102,7 @@ class Audience {
         for(let i = 0; i < n; i++){
             this.participation++;
         }
+        this.statusIndicatorUpdate(this.participation);
         console.log('AUDIENCE: Participation set to ' + this.participation + ' out of 10.');
     }
 }
