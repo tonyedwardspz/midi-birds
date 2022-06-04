@@ -87,8 +87,10 @@ class MIDI {
             document.getElementById('audio-credit').innerHTML = 'Audio Credit: ' + currentBird.songCredit;
 
         } else if ((key >= 48 && key <= 72) && state === 129){ // Keyboard/Off
-            console.log('MIDI: stopping singing');
-            app.songs[message.data[1]].pause();
+            if (app.songs[message.data[1]]){
+                console.log('MIDI: stopping singing');
+                app.songs[message.data[1]].pause();
+            }
         } else if (app.isGame){
             app.game.processKeyPress(state, key, velocity);
         }
