@@ -35,7 +35,7 @@ class FortunesGame extends Game {
             this.updateTeam(1);
             this.scores = [45,65]
             app.audience.updateTeamScores(this.scores[0], this.scores[1]);
-            super.showEndScreen("You've escaped the game");
+            super.showEndScreen("You've escaped the game.");
         }
 
         if ((key >= 48 && key <= 72) && state === 145 && (this.teamSelected === false)){ // Keyboard/On
