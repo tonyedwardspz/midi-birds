@@ -26,6 +26,13 @@ class PlayCardsGame extends Game {
     processKeyPress(state, key, velocity){
         console.log('GAME: Keypress received: ', key, state, velocity);
 
+        if (key === 93 && state === 144){
+            this.updateTeam(1);
+            this.scores = [45,65]
+            app.audience.updateTeamScores(this.scores[0], this.scores[1]);
+            super.showEndScreen();
+        }
+
         if ((key >= 48 && key <= 72) && state === 145 && !this.hasSelected){ // Keyboard/On
             this.hasSelected = true;
             this.currentBird = Bird.findByID(key);
