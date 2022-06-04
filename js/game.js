@@ -15,6 +15,13 @@ class Game {
             });
         }
 
+        if(app.gameID > 1){
+            document.getElementById('total-score').addEventListener('click', (e) => {
+                console.log('GAME: Total score clicked');
+                this.showTotalScores();
+            });
+        }
+
         if(app.gameID === 2){
             document.getElementById('save-score').addEventListener('click', (e) => {
                 console.log('GAME: Save score clicked');
@@ -35,6 +42,60 @@ class Game {
     showEndScreen(){
         let el = document.getElementById('end-game-screen');
         el.classList.remove('hidden');
+
+        el = document.getElementById('end-scores');
+        let scoreBoard = [];
+        if (this.currentTeam === 1){
+            scoreBoard.push({
+                teamName: app.audience.team1Name,
+                score: this.scores[0]
+            });
+            scoreBoard.push({
+                teamName: app.audience.team2Name,
+                score: this.scores[1]
+            });
+        } else {
+            scoreBoard.push({
+                teamName: app.audience.team2Name,
+                score: this.scores[1]
+            });
+            scoreBoard.push({
+                teamName: app.audience.team1Name,
+                score: this.scores[0]
+            });
+        }
+
+        scoreBoard.forEach((entry, i) => {
+            el.innerHTML += `<tr>
+                                <td>${i + 1}</td>
+                                <td>${entry.teamName}</td>
+                                <td>${entry.score}</td>
+                            </tr>`
+        });
+    }
+
+    showTotalScores(){
+        let data = [{
+                teamName: app.audience.team1Name,
+                score: DataStore.loadLocally('team1Score')
+            },
+            {
+                teamName: app.audience.team2Name,
+                score: DataStore.loadLocally('team2Score')
+            }
+        ];
+
+        data.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+
+        let el = document.getElementById('end-scores');
+        el.innerHTML = `<tr><th>Position</th><th>Team Name</th><th>Score</th></tr>`;
+        data.forEach((entry, i) => {
+            el.innerHTML += `<tr>
+                                <td>${i + 1}</td>
+                                <td>${entry.teamName}</td>
+                                <td>${entry.score}</td>
+                            </tr>`
+        });
     }
 
     static setStatus(type, state) {

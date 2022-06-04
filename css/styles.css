@@ -80,6 +80,14 @@ footer ul li {
     margin: 30vh auto 0 auto;
 }
 
+.table-container{
+    width: 40vw;
+    margin: 20vh auto 0 auto;
+}
+
+.table-container table{
+    margin: 10vh auto -20vh auto;
+}
 
 /* ----- Demo 1 ----- */
 
