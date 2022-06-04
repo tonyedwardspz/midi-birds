@@ -58,6 +58,9 @@ footer ul li {
     min-width: 15vw;
 }
 
+
+/* -------------- Splash Screens ------------ */
+
 .splash {
     position: absolute;
     width: 100vw;
@@ -76,6 +79,11 @@ footer ul li {
 }
 
 .button-container{
+    width: 40vw;
+    margin: 5vh auto 0 auto;
+}
+
+.button-container.start{
     width: 20vw;
     margin: 30vh auto 0 auto;
 }
@@ -85,8 +93,12 @@ footer ul li {
     margin: 10vh auto 0 auto;
 }
 
+.table-container h3 {
+    margin-top: 2em;
+}
+
 .table-container table{
-    margin: 10vh auto -20vh auto;
+    margin: 2vh auto 0 auto;
 }
 
 /* ----- Demo 1 ----- */

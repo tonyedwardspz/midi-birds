@@ -30,7 +30,7 @@ class PlayCardsGame extends Game {
             this.updateTeam(1);
             this.scores = [45,65]
             app.audience.updateTeamScores(this.scores[0], this.scores[1]);
-            super.showEndScreen();
+            super.showEndScreen('You escaped the game.');
         }
 
         if ((key >= 48 && key <= 72) && state === 145 && !this.hasSelected){ // Keyboard/On
@@ -121,18 +121,17 @@ class PlayCardsGame extends Game {
             alert('Wrong');
         }
 
+        if (answer !== this.higherLower){
+            this.changeTeam(this.currentTeam);
+        }
+
         if (birds.length === 5){
             console.log('GAME: Winner winner. Chicken Dinner');
             app.audience.updateTeamScores(this.scores[0], this.scores[1]);
 
-            let el = document.getElementById('message');
-            el.innerHTML = `Team ${this.currentTeam} won with a score of ${this.scores[this.currentTeam -1]}`;
-            super.showEndScreen();
-        }
-
-        if (answer !== this.higherLower){
-            this.changeTeam(this.currentTeam);
-        }
+            let teamName = this.currentTeam !== 1 ? app.audience.team1Name : app.audience.team2Name;
+            super.showEndScreen(`${teamName} won with a score of ${this.scores[this.currentTeam -1]}.`);
+        }   
     }
 
     updateScore(team, score){

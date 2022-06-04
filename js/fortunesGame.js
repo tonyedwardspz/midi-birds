@@ -109,9 +109,7 @@ class FortunesGame extends Game {
         } 
     }
 
-    setupLights(){
-        // Interface override method
-    }
+    setupLights(){}
 
     showAnswer(answer){
         let answerLi = document.getElementById('answer-' + answer);
@@ -170,19 +168,20 @@ class FortunesGame extends Game {
     }
 
     gameOver(type){
-        let el = document.getElementById('message');
+        let message = "";
+        
         if (type === 'complete'){
             if (this.scores[0] > this.scores[1]){
-                el.innerHTML = 'Team 1 won with a score of ' + this.scores[0];
+                message = `${app.audience.team1Name} won with a score of ${this.scores[0]}.`;
             } else {
-                el.innerHTML = 'Team 2 won with a score of ' + this.scores[1];
+                message = `${app.audience.team2Name} won with a score of ${this.scores[1]}.`;
             }
-        } else if ('maxGuesses'){
-            el.innerHTML = 'Team ' + this.currentTeam + ' looses :(';
-            el = document.getElementById('message-title');
+        } else {
+            message = 'Team ' + this.currentTeam + ' looses :(';
+            let el = document.getElementById('message-title');
             el.innerHTML = 'GAME OVER';
         }
         app.audience.updateTeamScores(this.scores[0], this.scores[1]);
-        super.showEndScreen();
+        super.showEndScreen(message);
     }
 }

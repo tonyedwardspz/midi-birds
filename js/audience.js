@@ -5,12 +5,13 @@ class Audience {
         this.participation = level;
         this.size = numberOfPeople;
 
-        if (level > 7) {
+        if (level >= 7) {
             this.teams = true
             this.team1Name = "";
             this.team1Score = 0;
             this.team2Name = "";
             this.team2Score = 0;
+            this.loadTeams();
         }
         this.statusIndicatorUpdate(level);
     }
