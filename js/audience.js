@@ -20,7 +20,9 @@ class Audience {
     }
 
     set participation(level){
-        console.log('AUDIENCE: Participation level has been set to ' + level + ' out of 10.');
+        if(app.gameID != 2){
+            console.log('AUDIENCE: Participation level has been set to ' + level + ' out of 10.');
+        }
         this._participation = level
     }
 
@@ -92,6 +94,35 @@ class Audience {
     statusIndicatorUpdate(participationLevel){
         let el = document.getElementById('participation-level');
         el.innerHTML = participationLevel;
+    }
+
+    saveTeamsAndScores(){
+        let currentHighScores = [];
+
+        let event = prompt('What event is this?');
+
+        let newData = [
+            {
+                teamName: this.team1Name,
+                event: event,
+                score: app.game.scores[0]
+            },
+            {
+                teamName: this.team2Name,
+                event: event,
+                score: app.game.scores[1]
+            }
+        ];
+
+        if (DataStore.loadLocally('highScores')){
+            let savedScores = DataStore.loadLocally('highScores');
+            currentHighScores = JSON.parse(savedScores);
+        }
+        
+        newData.forEach(entry => {
+            currentHighScores.push(entry);
+        });
+        DataStore.saveLocally('highScores', JSON.stringify(currentHighScores));
     }
 
     participationMultiplier(factor){

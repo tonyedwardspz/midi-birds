@@ -14,6 +14,13 @@ class Game {
                 app.audience.setupTeamNames();
             });
         }
+
+        if(app.gameID === 2){
+            document.getElementById('save-score').addEventListener('click', (e) => {
+                console.log('GAME: Save score clicked');
+                app.audience.saveTeamsAndScores();
+            });
+        }
     }
 
     updateTeam(team){
@@ -25,9 +32,14 @@ class Game {
         document.getElementById('team-' + otherTeam).classList.remove('active');
     }
 
+    showEndScreen(){
+        let el = document.getElementById('end-game-screen');
+        el.classList.remove('hidden');
+    }
+
     static setStatus(type, state) {
         console.log(type.toUpperCase() + ': Status ', state);
-        
+
         app.status[type] = state;
         document.getElementById('status-' + type).innerHTML = state ? ' :) ' : ' :( ';
     }

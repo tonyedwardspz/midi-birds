@@ -117,8 +117,10 @@ class PlayCardsGame extends Game {
         }
 
         if (birds.length === 5){
+            console.log('GAME: Winner winner. Chicken Dinner');
             alert('Winner Winner. Chicken Dinner');
             app.audience.updateTeamScores(this.scores[0], this.scores[1]);
+            super.showEndScreen();
         }
     }
 
