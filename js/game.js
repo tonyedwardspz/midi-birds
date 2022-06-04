@@ -44,28 +44,19 @@ class Game {
         el.classList.remove('hidden');
 
         el = document.getElementById('end-scores');
-        let scoreBoard = [];
-        if (this.currentTeam === 1){
-            scoreBoard.push({
-                teamName: app.audience.team1Name,
-                score: this.scores[0]
-            });
-            scoreBoard.push({
-                teamName: app.audience.team2Name,
-                score: this.scores[1]
-            });
-        } else {
-            scoreBoard.push({
-                teamName: app.audience.team2Name,
-                score: this.scores[1]
-            });
-            scoreBoard.push({
-                teamName: app.audience.team1Name,
-                score: this.scores[0]
-            });
-        }
 
-        scoreBoard.forEach((entry, i) => {
+        let data = [{
+                teamName: app.audience.team1Name,
+                score: this.scores[0]
+            },
+            {
+                teamName: app.audience.team2Name,
+                score: this.scores[1]
+            }
+        ];
+        data.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+
+        data.forEach((entry, i) => {
             el.innerHTML += `<tr>
                                 <td>${i + 1}</td>
                                 <td>${entry.teamName}</td>

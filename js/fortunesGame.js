@@ -175,7 +175,7 @@ class FortunesGame extends Game {
             if (this.scores[0] > this.scores[1]){
                 el.innerHTML = 'Team 1 won with a score of ' + this.scores[0];
             } else {
-                el.innerHTML = 'Team 2 won with a score of ' + this.scores[2];
+                el.innerHTML = 'Team 2 won with a score of ' + this.scores[1];
             }
         } else if ('maxGuesses'){
             el.innerHTML = 'Team ' + this.currentTeam + ' looses :(';
