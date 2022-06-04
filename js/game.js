@@ -49,8 +49,7 @@ class Game {
             },{
                 teamName: app.audience.team2Name,
                 score: this.scores[1]
-            }
-        ];
+        }];
         data.sort((a, b) => parseInt(b.score) - parseInt(a.score));
 
         el = document.getElementById('end-scores');
@@ -70,8 +69,7 @@ class Game {
             },{
                 teamName: app.audience.team2Name,
                 score: DataStore.loadLocally('team2Score')
-            }
-        ];
+        }];
         data.sort((a, b) => parseInt(b.score) - parseInt(a.score));
 
         let el = document.getElementById('end-scores');

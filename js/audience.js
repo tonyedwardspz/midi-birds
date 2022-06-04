@@ -98,23 +98,19 @@ class Audience {
     }
 
     saveTeamsAndScores(){
-        let currentHighScores = [];
-
         let event = prompt('What event is this?');
 
-        let newData = [
-            {
+        let newData = [{
                 teamName: this.team1Name,
                 event: event,
                 score: app.game.scores[0]
-            },
-            {
+            },{
                 teamName: this.team2Name,
                 event: event,
                 score: app.game.scores[1]
-            }
-        ];
+        }];
 
+        let currentHighScores = [];
         if (DataStore.loadLocally('highScores')){
             let savedScores = DataStore.loadLocally('highScores');
             currentHighScores = JSON.parse(savedScores);
