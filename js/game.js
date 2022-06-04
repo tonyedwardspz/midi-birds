@@ -75,7 +75,6 @@ class Game {
         data.sort((a, b) => parseInt(b.score) - parseInt(a.score));
 
         let el = document.getElementById('end-scores');
-        el.innerHTML = `<tr><th>Position</th><th>Team Name</th><th>Score</th></tr>`;
         data.forEach((entry, i) => {
             el.innerHTML += `<tr>
                                 <td>${i + 1}</td>
