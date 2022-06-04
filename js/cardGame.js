@@ -117,17 +117,21 @@ class PlayCardsGame extends Game {
             this.updateScore(this.currentTeam, 10);
         } else if(this.currentBird.sightings === lastBird.sightings){
             alert('Nothing for a pair. Not in this game.');
-            this.changeTeam(this.currentTeam);
         } else {
             alert('Wrong');
-            this.changeTeam(this.currentTeam);
         }
 
         if (birds.length === 5){
             console.log('GAME: Winner winner. Chicken Dinner');
-            alert('Winner Winner. Chicken Dinner');
             app.audience.updateTeamScores(this.scores[0], this.scores[1]);
+
+            let el = document.getElementById('message');
+            el.innerHTML = `Team ${this.currentTeam} won with a score of ${this.scores[this.currentTeam -1]}`;
             super.showEndScreen();
+        }
+
+        if (answer !== this.higherLower){
+            this.changeTeam(this.currentTeam);
         }
     }
 

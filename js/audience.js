@@ -39,8 +39,8 @@ class Audience {
         this.team1Name = prompt("Team 1's chosen name?", 'Team 1');
         this.team2Name = prompt("Team 2's chosen name?", 'Team 2');
 
-        DataStore.saveLocally('team1Name', this.team1Name);
-        DataStore.saveLocally('team2Name', this.team2Name);
+        DataStore.saveLocally('team1Name', this.team1Name === 'undefined' ? 'Team 1' : this.team1Name);
+        DataStore.saveLocally('team2Name', this.team2Name === 'undefined' ? 'Team 2' : this.team2Name);
         this.resetTeamScores();
         this.updateTeamNames();
 

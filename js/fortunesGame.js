@@ -29,6 +29,15 @@ class FortunesGame extends Game {
     }
 
     processKeyPress(state, key, velocity){
+
+        if (key === 93 && state === 144){
+            console.log('ESCAPE');
+            this.updateTeam(1);
+            this.scores = [45,65]
+            app.audience.updateTeamScores(this.scores[0], this.scores[1]);
+            super.showEndScreen();
+        }
+
         if ((key >= 48 && key <= 72) && state === 145 && (this.teamSelected === false)){ // Keyboard/On
             console.log('GAME: Key press received');
             
@@ -161,15 +170,19 @@ class FortunesGame extends Game {
     }
 
     gameOver(type){
+        let el = document.getElementById('message');
         if (type === 'complete'){
             if (this.scores[0] > this.scores[1]){
-                alert('Congratulations\n\nTeam 1 won with a score of ' + this.scores[0]);
+                el.innerHTML = 'Team 1 won with a score of ' + this.scores[0];
             } else {
-                alert('Congratulations\n\nTeam 2 won with a score of ' + this.scores[1]);
+                el.innerHTML = 'Team 2 won with a score of ' + this.scores[2];
             }
         } else if ('maxGuesses'){
-            alert('GAME OVER \n\nTeam ' + this.currentTeam + ' looses :(');
+            el.innerHTML = 'Team ' + this.currentTeam + ' looses :(';
+            el = document.getElementById('message-title');
+            el.innerHTML = 'GAME OVER';
         }
         app.audience.updateTeamScores(this.scores[0], this.scores[1]);
+        super.showEndScreen();
     }
 }
