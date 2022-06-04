@@ -6,7 +6,7 @@
         "imageCredit": "Tony Edwards",
         "song": "./audio/birdsong/robin.mp3",
         "songCredit": "RSPB",
-        "sightings": 29
+        "sightings": 37
     },
     {
         "id": 49,
@@ -24,7 +24,7 @@
         "imageCredit": " Hedera Baltica",
         "song": "./audio/birdsong/jackdaw.mp3",
         "songCredit": "Tony",
-        "sightings": 9
+        "sightings": 20
     },
     {
         "id": 51,
@@ -33,7 +33,7 @@
         "imageCredit": "Manx John",
         "song": "./audio/birdsong/blackbird.mp3",
         "songCredit": "Tony",
-        "sightings": 4
+        "sightings": 9
     },
     {
         "id": 52,
@@ -42,7 +42,7 @@
         "imageCredit": "Sophie",
         "song": "./audio/birdsong/wood-pigeon.mp3",
         "songCredit": "RSPB",
-        "sightings": 9
+        "sightings": 14
     },
     {
         "id": 53,
@@ -51,7 +51,7 @@
         "imageCredit": "Lip Kee",
         "song": "./audio/birdsong/house-sparrow.mp3",
         "songCredit": "Tony",
-        "sightings": 34
+        "sightings": 76
     },
     {
         "id": 54,
@@ -60,7 +60,7 @@
         "imageCredit": "Sergey Yeliseev",
         "song": "./audio/birdsong/great-tit.mp3",
         "songCredit": "Tony",
-        "sightings": 14
+        "sightings": 18
     },
     {
         "id": 55,
@@ -69,7 +69,7 @@
         "imageCredit": "Tony",
         "song": "./audio/birdsong/herring-gull.mp3",
         "songCredit": "Tony",
-        "sightings": 13
+        "sightings": 22
     },
     {
         "id": 56,
@@ -78,7 +78,7 @@
         "imageCredit": "Martin Pilát",
         "song": "./audio/birdsong/raven.mp3",
         "songCredit": "Tony",
-        "sightings": 3
+        "sightings": 4
     },
     {
         "id": 57,
@@ -87,7 +87,7 @@
         "imageCredit": "Peter O'Connor",
         "song": "./audio/birdsong/collared-dove.mp3",
         "songCredit": "RSPB",
-        "sightings": 7
+        "sightings": 26
     },
     {
         "id": 58,
@@ -96,7 +96,7 @@
         "imageCredit": "Koshyk",
         "song": "./audio/birdsong/wren.mp3",
         "songCredit": "Tony",
-        "sightings": 2
+        "sightings": 12
     },
     {
         "id": 59,
@@ -123,7 +123,7 @@
         "imageCredit": "Mike Prince",
         "song": "./audio/birdsong/placeholder.wav",
         "songCredit": "It's Tony!",
-        "sightings": 2
+        "sightings": 3
     },
     {
         "id": 62,
@@ -141,7 +141,7 @@
         "imageCredit": "foxypar4",
         "song": "./audio/birdsong/rook.mp3",
         "songCredit": "RSPB",
-        "sightings": 8
+        "sightings": 18
     },
     {
         "id": 64,
@@ -150,7 +150,7 @@
         "imageCredit": "Sergey Yeliseev",
         "song": "./audio/birdsong/long-tailed-tit.mp3",
         "songCredit": "Tony",
-        "sightings": 15
+        "sightings": 19
     },
     {
         "id": 65,
@@ -168,7 +168,7 @@
         "imageCredit": "foxypar4",
         "song": "./audio/birdsong/chaffinch.mp3",
         "songCredit": "Tony",
-        "sightings": 22
+        "sightings": 4
     },
     {
         "id": 67,
@@ -177,7 +177,7 @@
         "imageCredit": "Keith Ellwood",
         "song": "./audio/birdsong/blue-tit.mp3",
         "songCredit": "Tony",
-        "sightings": 6
+        "sightings": 21
     },
     {
         "id": 68,
@@ -213,7 +213,7 @@
         "imageCredit": "Steve Higgins",
         "song": "./audio/birdsong/dunnock.mp3",
         "songCredit": "Tony",
-        "sightings": 13
+        "sightings": 37
     },
     {
         "id": 72,
@@ -222,6 +222,6 @@
         "imageCredit": "Kev Chapman",
         "song": "./audio/birdsong/goldfinch.mp3",
         "songCredit": "Tony",
-        "sightings": 10
+        "sightings": 11
     }
 ]
