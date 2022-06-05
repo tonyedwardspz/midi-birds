@@ -37,8 +37,12 @@ class Game {
     }
 
     showEndScreen(message){
-        let el = document.getElementById('end-game-screen');
-        el.classList.remove('hidden');
+        let el = null;
+
+        setTimeout(() => {
+            el = document.getElementById('end-game-screen');
+            el.classList.remove('hidden');
+        }, 2000);
 
         el = document.getElementById('message');
         el.innerHTML = message;
