@@ -48,7 +48,7 @@ class Bird {
     }
 
     static catchBirds = async () => {
-        const response = await fetch("../js/birds.json");
+        const response = await fetch("../data.json");
         const json = await response.json();
         const flock = [];
     

@@ -1,9 +1,8 @@
 "use strict"
 
 class Audience {
-    constructor(level, numberOfPeople){
+    constructor(level){
         this.participation = level;
-        this.size = numberOfPeople;
 
         if (level >= 7) {
             this.teams = true
@@ -14,6 +13,12 @@ class Audience {
             this.loadTeams();
         }
         this.statusIndicatorUpdate(level);
+
+        if(app.gameID){
+            this.size = DataStore.loadLocally('audience-size');
+        } else {
+            this.size = 25;
+        }
     }
 
     get participation(){
@@ -37,6 +42,9 @@ class Audience {
     }
 
     setupTeamNames(){
+        this.size = prompt('What is the audience size?', 25);
+        DataStore.saveLocally('audience-size', this.size);
+
         this.team1Name = prompt("Team 1's chosen name?", 'Team 1');
         this.team2Name = prompt("Team 2's chosen name?", 'Team 2');
 
